@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebKlein — Sites web artisanaux · Hautes-Pyrénées</title>
   <meta name="description" content="Sites vitrines faits à la main par un artisan. Beaux, rapides, bien référencés. Sans abonnement, sans dépendance. À partir de 249€.">
+  <link rel="canonical" href="https://www.webklein.fr/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WebKlein — Sites web artisanaux · Hautes-Pyrénées">
+  <meta property="og:description" content="Sites vitrines faits à la main par un artisan menuisier. Beaux, rapides, bien référencés. 249€ tout inclus, sans abonnement.">
+  <meta property="og:url" content="https://www.webklein.fr/">
+  <meta property="og:image" content="https://www.webklein.fr/logo-webklein.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="WebKlein">
+
+  <!-- Schema.org — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WebKlein — L'Artisan du Web",
+    "description": "Création de sites vitrines artisanaux pour indépendants et artisans. 249€ tout inclus, sans abonnement.",
+    "url": "https://www.webklein.fr",
+    "email": "contact@webklein.fr",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gerde",
+      "postalCode": "65200",
+      "addressRegion": "Hautes-Pyrénées",
+      "addressCountry": "FR"
+    },
+    "priceRange": "249€",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 43.06, "longitude": 0.15 },
+      "geoRadius": "100000"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Tom Klein",
+      "jobTitle": "Menuisier-ébéniste & Créateur web"
+    },
+    "image": "https://www.webklein.fr/logo-webklein.png",
+    "sameAs": []
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -83,7 +127,11 @@
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
     }
     .hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,.7) 0%,transparent 40%)}
-    .hero-in{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:5rem 2rem 8rem;width:100%}
+    .hero-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 8rem;width:100%;display:flex;align-items:center;gap:3rem}
+    .hero-left{flex:1;min-width:0}
+    .hero-right{flex:0 0 auto;display:flex;align-items:center;justify-content:center;opacity:0;animation:up 1.1s .5s cubic-bezier(.16,1,.3,1) forwards}
+    .hero-right img{width:clamp(220px,22vw,340px);height:auto;filter:drop-shadow(0 8px 40px rgba(0,0,0,.35));animation:float 6s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
     .hero-eye{display:flex;align-items:center;gap:.7rem;font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(217,119,87,.85);margin-bottom:2rem;opacity:0;animation:up .8s .15s cubic-bezier(.16,1,.3,1) forwards}
     .hero-eye::before{content:'';width:22px;height:1px;background:rgba(217,119,87,.5)}
@@ -320,6 +368,11 @@
 
     @media(max-width:900px){
       .nav-links{display:none}
+      .hero-in{flex-direction:column-reverse;text-align:center;padding-bottom:4rem}
+      .hero-right img{width:clamp(160px,40vw,240px)}
+      .hero-right{margin-bottom:1rem}
+      .hero-sub{margin-left:auto;margin-right:auto}
+      .hero-actions{justify-content:center}
       .histoire-grid,.split-grid,.tarifs-grid,.liberte-points,.limites-grid{grid-template-columns:1fr;gap:2rem}
       .split-rev{direction:ltr}
       .real-grid,.philo-grid{grid-template-columns:1fr}
@@ -354,49 +407,59 @@
   <div class="hero-veil"></div>
   <div class="hero-in">
 
-    <!-- Ligne décorative top -->
-    <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2.25rem;opacity:0;animation:up .6s .05s cubic-bezier(.16,1,.3,1) forwards">
-      <div style="width:40px;height:1px;background:rgba(217,119,87,.55)"></div>
-      <span style="font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(217,119,87,.75)">Artisan menuisier · Hautes-Pyrénées</span>
+    <!-- ══ Colonne gauche : texte ══ -->
+    <div class="hero-left">
+
+      <!-- Ligne décorative top -->
+      <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2.25rem;opacity:0;animation:up .6s .05s cubic-bezier(.16,1,.3,1) forwards">
+        <div style="width:40px;height:1px;background:rgba(217,119,87,.55)"></div>
+        <span style="font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(217,119,87,.75)">Artisan menuisier · Hautes-Pyrénées</span>
+      </div>
+
+      <!-- Badge + Prix — premier accroche visuel -->
+      <div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;margin-bottom:1.75rem;opacity:0;animation:up .7s .15s cubic-bezier(.16,1,.3,1) forwards">
+        <span style="font-size:.72rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;background:var(--coral);color:#fff;padding:.5rem 1.3rem;border-radius:2px;line-height:1.2">Sites web artisanaux</span>
+        <div style="display:flex;align-items:baseline;gap:.4rem">
+          <span style="font-family:var(--serif);font-size:3rem;font-weight:300;color:#fff;line-height:1">249€</span>
+          <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em">tout inclus</span>
+        </div>
+      </div>
+
+      <!-- Grand titre -->
+      <h1 class="hero-h1" style="font-size:clamp(3.2rem,8.5vw,8rem)">
+        Un site web<br><em>fait à la main.</em>
+      </h1>
+
+      <!-- Sous-titre percutant -->
+      <p class="hero-sub" style="font-size:1.08rem;max-width:560px;color:rgba(255,255,255,.72)">
+        Beau, rapide, bien référencé.<br>
+        <strong style="color:#fff;font-weight:400">Sans abonnement. Sans dépendance. Votre site vous appartient à 100%.</strong>
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-actions" style="margin-top:0">
+        <a href="#contact" class="btn btn-coral" style="padding:1rem 2.4rem;font-size:.82rem;letter-spacing:.06em">Parlons de votre projet →</a>
+        <a href="#realisations" class="btn btn-ghost" style="padding:1rem 1.8rem">Voir les réalisations</a>
+      </div>
+
+      <!-- Stats horizontales en bas du hero -->
+      <div style="display:flex;flex-wrap:wrap;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:up .8s .8s cubic-bezier(.16,1,.3,1) forwards">
+        <div>
+          <div style="font-family:var(--serif);font-size:3rem;font-weight:300;color:#fff;line-height:1">249€</div>
+          <div style="font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem">tout inclus</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,.08)"></div>
+        <div>
+          <div style="font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(217,119,87,.9);line-height:1">0€</div>
+          <div style="font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem">d'abonnement</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Badge + Prix — premier accroche visuel -->
-    <div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;margin-bottom:1.75rem;opacity:0;animation:up .7s .15s cubic-bezier(.16,1,.3,1) forwards">
-      <span style="font-size:.72rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;background:var(--coral);color:#fff;padding:.5rem 1.3rem;border-radius:2px;line-height:1.2">Sites web artisanaux</span>
-      <div style="display:flex;align-items:baseline;gap:.4rem">
-        <span style="font-family:var(--serif);font-size:3rem;font-weight:300;color:#fff;line-height:1">249€</span>
-        <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em">tout inclus</span>
-      </div>
-    </div>
-
-    <!-- Grand titre -->
-    <h1 class="hero-h1" style="font-size:clamp(3.2rem,8.5vw,8rem)">
-      Un site web<br><em>fait à la main.</em>
-    </h1>
-
-    <!-- Sous-titre percutant -->
-    <p class="hero-sub" style="font-size:1.08rem;max-width:560px;color:rgba(255,255,255,.72)">
-      Beau, rapide, bien référencé.<br>
-      <strong style="color:#fff;font-weight:400">Sans abonnement. Sans dépendance. Votre site vous appartient à 100%.</strong>
-    </p>
-
-    <!-- CTA -->
-    <div class="hero-actions" style="margin-top:0">
-      <a href="#contact" class="btn btn-coral" style="padding:1rem 2.4rem;font-size:.82rem;letter-spacing:.06em">Parlons de votre projet →</a>
-      <a href="#realisations" class="btn btn-ghost" style="padding:1rem 1.8rem">Voir les réalisations</a>
-    </div>
-
-    <!-- Stats horizontales en bas du hero -->
-    <div style="display:flex;flex-wrap:wrap;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:up .8s .8s cubic-bezier(.16,1,.3,1) forwards">
-      <div>
-        <div style="font-family:var(--serif);font-size:3rem;font-weight:300;color:#fff;line-height:1">249€</div>
-        <div style="font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem">tout inclus</div>
-      </div>
-      <div style="width:1px;background:rgba(255,255,255,.08)"></div>
-      <div>
-        <div style="font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(217,119,87,.9);line-height:1">0€</div>
-        <div style="font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem">d'abonnement</div>
-      </div>
+    <!-- ══ Colonne droite : logo ══ -->
+    <div class="hero-right">
+      <img src="logo-webklein-transparent.png" alt="Logo WebKlein — L'Artisan du Web" width="340" height="340">
     </div>
 
   </div>
@@ -822,13 +885,8 @@
     WebKlein <em style="font-style:italic;color:rgba(217,119,87,.55)">· L'Artisan du Web</em>
   </div>
   <div style="text-align:center;margin-top:.65rem;font-size:.55rem;color:rgba(255,255,255,.25);letter-spacing:.04em">
-    site par <a href="https://webklein.fr" target="_blank" rel="noopener" style="color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:2px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Tom Klein</a>
+    site par <a href="https://agencementklein.fr" target="_blank" rel="noopener" style="color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:2px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Tom Klein</a>
   </div>
-  <p style="text-align:center;font-size:.72rem;margin-top:1.2rem">
-    <a href="#mentions-legales" onclick="document.getElementById('modal-mentions').style.display='flex'" style="color:rgba(255,255,255,.35);text-decoration:underline;text-underline-offset:2px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Mentions légales</a>
-    <span style="color:rgba(255,255,255,.2);margin:0 .4rem">·</span>
-    <a href="#politique-confidentialite" onclick="document.getElementById('modal-confidentialite').style.display='flex'" style="color:rgba(255,255,255,.35);text-decoration:underline;text-underline-offset:2px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Politique de confidentialité</a>
-  </p>
 </footer>
 
 <button id="scroll-top" aria-label="Haut de page">
@@ -914,152 +972,5 @@
   // Cacher la scrollbar CSS
   if(carousel){ var s=document.createElement('style'); s.textContent='#carousel::-webkit-scrollbar{display:none}'; document.head.appendChild(s); }
 </script>
-
-<!-- ===== CSS MODALES JURIDIQUES ===== -->
-<style>
-.legal-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1.5rem}
-.legal-modal-content{background:#fff;color:#222;max-width:720px;width:100%;max-height:85vh;overflow-y:auto;border-radius:12px;padding:2.5rem 2rem;position:relative;font-family:system-ui,-apple-system,sans-serif;font-size:.95rem;line-height:1.65}
-.legal-modal-content h2{font-size:1.4rem;margin:0 0 1.5rem;color:#141413}
-.legal-modal-content h3{font-size:1.1rem;margin:1.8rem 0 .6rem;color:#141413}
-.legal-modal-content p{margin:.5rem 0}
-.legal-modal-content ul{margin:.5rem 0;padding-left:1.5rem}
-.legal-modal-content li{margin:.3rem 0}
-.legal-modal-content a{color:#d97757}
-.legal-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.8rem;cursor:pointer;color:#666;line-height:1;padding:.3rem}
-.legal-close:hover{color:#141413}
-@media(max-width:600px){.legal-modal-content{padding:1.5rem 1.2rem;border-radius:8px}.legal-modal-content h2{font-size:1.2rem}}
-</style>
-
-<!-- ===== MODALE MENTIONS LÉGALES ===== -->
-<div id="modal-mentions" class="legal-modal" onclick="if(event.target===this)this.style.display='none'">
-  <div class="legal-modal-content">
-    <button class="legal-close" onclick="this.closest('.legal-modal').style.display='none'" aria-label="Fermer">&times;</button>
-
-    <h2>Mentions légales</h2>
-
-    <h3>Éditeur du site</h3>
-    <p>
-      Le site <strong>webklein.fr</strong> est édité par :<br>
-      <strong>Agencement Klein</strong><br>
-      EURL (Entreprise Unipersonnelle à Responsabilité Limitée)<br>
-      Siège social : 3 Chemin du Riou Arrouy, 65200 Gerde<br>
-      SIRET : 989 322 607 00015<br>
-      N° TVA intracommunautaire : FR51989322607
-    </p>
-    <p>Directeur de la publication : Tom Klein</p>
-    <p>Contact : contact@webklein.fr</p>
-
-    <h3>Hébergement</h3>
-    <p>
-      Le site est hébergé par <strong>Cloudflare, Inc.</strong><br>
-      101 Townsend Street, San Francisco, CA 94107, États-Unis<br>
-      <a href="https://www.cloudflare.com" target="_blank" rel="noopener">www.cloudflare.com</a>
-    </p>
-    <p>
-      Le nom de domaine est enregistré auprès de <strong>Infomaniak Network SA</strong><br>
-      Rue Eugène-Marziano 25, 1227 Les Acacias (Genève), Suisse<br>
-      <a href="https://www.infomaniak.com" target="_blank" rel="noopener">www.infomaniak.com</a>
-    </p>
-
-    <h3>Conception du site</h3>
-    <p>
-      Site conçu et développé par <strong>WebKlein — L'Artisan du Web</strong><br>
-      <a href="https://webklein.fr" target="_blank" rel="noopener">webklein.fr</a>
-    </p>
-
-    <h3>Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, photographies, logo, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, en tout ou partie, du contenu de ce site est interdite sans l'autorisation écrite préalable d'Agencement Klein.</p>
-
-    <h3>Données personnelles</h3>
-    <p>Pour toute information relative à la collecte et au traitement de vos données personnelles, consultez notre <a href="#" onclick="document.getElementById('modal-mentions').style.display='none';document.getElementById('modal-confidentialite').style.display='flex'">Politique de confidentialité</a>.</p>
-    <p>Pour exercer vos droits (accès, rectification, effacement, opposition), contactez : contact@webklein.fr</p>
-    <p>En cas de réclamation : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
-
-    <h3>Cookies</h3>
-    <p>Ce site n'utilise aucun cookie publicitaire ni outil de suivi tiers. Seuls des cookies strictement nécessaires au fonctionnement technique du site peuvent être utilisés.</p>
-
-    <h3>Responsabilité</h3>
-    <p>Agencement Klein s'efforce de fournir des informations aussi précises que possible. Toutefois, Agencement Klein ne pourra être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour de ces informations.</p>
-  </div>
-</div>
-
-<!-- ===== MODALE POLITIQUE DE CONFIDENTIALITÉ ===== -->
-<div id="modal-confidentialite" class="legal-modal" onclick="if(event.target===this)this.style.display='none'">
-  <div class="legal-modal-content">
-    <button class="legal-close" onclick="this.closest('.legal-modal').style.display='none'" aria-label="Fermer">&times;</button>
-
-    <h2>Politique de confidentialité</h2>
-    <p style="font-size:.85rem;opacity:.6">Dernière mise à jour : Avril 2026</p>
-
-    <h3>1. Responsable du traitement</h3>
-    <p>
-      <strong>Agencement Klein</strong><br>
-      3 Chemin du Riou Arrouy, 65200 Gerde<br>
-      Contact : contact@webklein.fr
-    </p>
-
-    <h3>2. Données collectées</h3>
-    <p><strong>Via le formulaire de contact :</strong></p>
-    <ul>
-      <li>Nom et/ou prénom</li>
-      <li>Adresse email</li>
-      <li>Activité professionnelle (si renseignée)</li>
-      <li>Contenu du message</li>
-    </ul>
-    <p><strong>Données de navigation (collecte automatique) :</strong></p>
-    <ul>
-      <li>Adresse IP (anonymisée par l'hébergeur)</li>
-      <li>Type de navigateur et système d'exploitation</li>
-      <li>Pages consultées et durée de visite</li>
-    </ul>
-
-    <h3>3. Finalités</h3>
-    <p>Les données collectées sont utilisées exclusivement pour répondre à vos demandes de contact et de devis, et assurer le bon fonctionnement technique du site. Aucune utilisation commerciale, publicitaire ou de profilage.</p>
-
-    <h3>4. Base légale</h3>
-    <ul>
-      <li><strong>Intérêt légitime</strong> pour les données de navigation (fonctionnement du site)</li>
-      <li><strong>Consentement</strong> pour les données transmises via le formulaire de contact</li>
-    </ul>
-
-    <h3>5. Destinataires</h3>
-    <p>Les données sont destinées uniquement à Tom Klein. Aucune transmission à des tiers, sauf obligation légale.</p>
-    <p>Prestataire technique : <strong>Cloudflare, Inc.</strong> (hébergement) — transfert UE/US encadré par les clauses contractuelles types (CCT).</p>
-
-    <h3>6. Durée de conservation</h3>
-    <ul>
-      <li>Données du formulaire : 12 mois maximum</li>
-      <li>Données de navigation : 1 an maximum (obligations légales)</li>
-    </ul>
-
-    <h3>7. Cookies</h3>
-    <p>Ce site n'utilise <strong>aucun cookie publicitaire, de suivi ou d'analyse comportementale</strong>. Seuls des cookies strictement nécessaires au fonctionnement technique peuvent être déposés (pas de consentement requis, conformément aux recommandations de la CNIL).</p>
-
-    <h3>8. Vos droits</h3>
-    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-    <ul>
-      <li><strong>Accès</strong> : obtenir une copie de vos données</li>
-      <li><strong>Rectification</strong> : corriger des données inexactes</li>
-      <li><strong>Effacement</strong> : demander la suppression</li>
-      <li><strong>Opposition</strong> : vous opposer au traitement</li>
-      <li><strong>Limitation</strong> : restreindre le traitement</li>
-      <li><strong>Portabilité</strong> : recevoir vos données dans un format structuré</li>
-    </ul>
-    <p>Pour exercer ces droits : <strong>contact@webklein.fr</strong></p>
-    <p>Délai de réponse : un mois maximum.</p>
-
-    <h3>9. Réclamation</h3>
-    <p>En cas de différend, vous pouvez saisir la CNIL :<br>
-    <strong>Commission Nationale de l'Informatique et des Libertés</strong><br>
-    3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07<br>
-    <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
-  </div>
-</div>
-
-<!-- ===== JS FERMETURE MODALES (Escape) ===== -->
-<script>
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.legal-modal').forEach(function(m){m.style.display='none'})}});
-</script>
-
 </body>
 </html>
