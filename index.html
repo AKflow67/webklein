@@ -888,7 +888,38 @@
   <div style="text-align:center;margin-top:.65rem;font-size:.55rem;color:rgba(255,255,255,.25);letter-spacing:.04em">
     site par <a href="https://agencementklein.fr" target="_blank" rel="noopener" style="color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:2px;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">Tom Klein</a>
   </div>
+  <div style="text-align:center;margin-top:.75rem;font-size:.6rem;color:rgba(255,255,255,.3);display:flex;justify-content:center;gap:1.2rem">
+    <a href="#mentions-legales" onclick="document.getElementById('modal-mentions').style.display='flex'" style="color:rgba(255,255,255,.35);text-decoration:none;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Mentions légales</a>
+    <a href="#politique-confidentialite" onclick="document.getElementById('modal-confidentialite').style.display='flex'" style="color:rgba(255,255,255,.35);text-decoration:none;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Politique de confidentialité</a>
+  </div>
 </footer>
+
+<!-- MODALE MENTIONS LÉGALES -->
+<div id="modal-mentions" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;padding:2rem" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--paper);max-width:640px;width:100%;max-height:80vh;overflow-y:auto;border-radius:6px;padding:2.5rem;position:relative;color:var(--ink)">
+    <button onclick="document.getElementById('modal-mentions').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)" aria-label="Fermer">&times;</button>
+    <h2 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:1.2rem">Mentions légales</h2>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Éditeur du site</strong><br>Tom Klein - Agencement Klein (EURL)<br>Siège social : Gerde, 65200, Hautes-Pyrénées<br>SIRET : 989 322 607 00011<br>TVA intracommunautaire : FR51989322607<br>Email : contact@webklein.fr</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Directeur de la publication</strong><br>Tom Klein</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Hébergement</strong><br>Cloudflare, Inc.<br>101 Townsend Street, San Francisco, CA 94107, États-Unis<br>www.cloudflare.com</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Registrar du domaine</strong><br>Infomaniak Network SA<br>Rue Eugène-Marziano 25, 1227 Les Acacias, Genève, Suisse<br>www.infomaniak.com</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid)"><strong style="color:var(--ink)">Médiateur de la consommation</strong><br>CM2C - Centre de la Médiation de la Consommation de Conciliateurs de Justice<br>49 rue de Ponthieu, 75008 Paris<br>www.cm2c.net</p>
+  </div>
+</div>
+
+<!-- MODALE POLITIQUE DE CONFIDENTIALITÉ -->
+<div id="modal-confidentialite" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;padding:2rem" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--paper);max-width:640px;width:100%;max-height:80vh;overflow-y:auto;border-radius:6px;padding:2.5rem;position:relative;color:var(--ink)">
+    <button onclick="document.getElementById('modal-confidentialite').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)" aria-label="Fermer">&times;</button>
+    <h2 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:1.2rem">Politique de confidentialité</h2>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Responsable du traitement</strong><br>Tom Klein - Agencement Klein (EURL)<br>Email : contact@webklein.fr</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Données collectées</strong><br>Le formulaire de contact collecte votre prénom, nom, adresse email, activité et message. Ces données sont utilisées uniquement pour répondre à votre demande et ne sont jamais transmises à des tiers.</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Base légale</strong><br>Intérêt légitime (répondre à votre demande de contact).</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Durée de conservation</strong><br>Vos données sont conservées le temps nécessaire au traitement de votre demande, puis supprimées sous 12 mois.</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid);margin-bottom:.8rem"><strong style="color:var(--ink)">Cookies</strong><br>Ce site n'utilise aucun cookie de suivi, aucun outil d'analyse, aucun pixel publicitaire.</p>
+    <p style="font-size:.82rem;line-height:1.8;color:var(--mid)"><strong style="color:var(--ink)">Vos droits</strong><br>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, contactez : contact@webklein.fr</p>
+  </div>
+</div>
 
 <button id="scroll-top" aria-label="Haut de page">
   <svg viewBox="0 0 52 64" width="52" height="64" fill="none">
