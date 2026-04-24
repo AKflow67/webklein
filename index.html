@@ -313,27 +313,6 @@
     .tarif-note{background:var(--paper-dk);border:1px solid var(--light-g);border-radius:4px;padding:1.4rem 1.75rem;font-size:.8rem;color:var(--mid);line-height:1.75;text-align:center}
     .tarif-note strong{color:var(--dark)}
 
-    /* ── LIBERTÉ ── */
-    #liberte{background:var(--dark);padding:8rem 0;position:relative;overflow:hidden}
-    /* Fond abstrait forêt / nature */
-    #liberte::before{
-      content:'';position:absolute;inset:0;
-      background:
-        radial-gradient(ellipse 100% 80% at 50% 100%,rgba(120,140,93,.15) 0%,transparent 55%),
-        radial-gradient(ellipse 60% 60% at 20% 20%,rgba(217,119,87,.08) 0%,transparent 50%);
-      pointer-events:none;
-    }
-    .liberte-in{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
-    #liberte .lbl{color:rgba(217,119,87,.65)}
-    #liberte .h2{color:#fff}
-    #liberte .h2 em{color:rgba(233,175,148,.9)}
-    .liberte-body{font-size:.95rem;color:rgba(255,255,255,.62);line-height:1.92;margin:1.75rem 0 3rem}
-    .liberte-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:left}
-    .lp{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:1.5rem;transition:background var(--ease)}
-    .lp:hover{background:rgba(255,255,255,.12)}
-    .lp h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(217,119,87,.9);margin-bottom:.6rem}
-    .lp p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65}
-
     /* ── LIMITES ── */
     #limites{background:var(--paper-dk);padding:7rem 0}
     .limites-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:800px;margin:2.5rem auto 0}
@@ -377,7 +356,7 @@
       .hero-right{margin-bottom:1rem}
       .hero-sub{margin-left:auto;margin-right:auto}
       .hero-actions{justify-content:center}
-      .histoire-grid,.split-grid,.tarifs-grid,.liberte-points,.limites-grid{grid-template-columns:1fr;gap:2rem}
+      .histoire-grid,.split-grid,.tarifs-grid,.limites-grid{grid-template-columns:1fr;gap:2rem}
       .split-rev{direction:ltr}
       .real-grid,.philo-grid{grid-template-columns:1fr}
       .split-txt{padding:3.5rem 2rem}
@@ -797,20 +776,6 @@
         </div>
       </div>
       <p class="tarif-note r d2">Le forfait modification <strong>50€</strong> intervient <strong>après la phase de création</strong>, une fois votre site en ligne. Le principe est simple : vous regroupez tout ce que vous voulez changer - une photo, un texte, un tarif, une section - et je m'en occupe en une seule intervention. <strong>Un forfait = un lot de modifications</strong>, quel que soit le nombre de petits ajustements. Si votre demande dépasse le cadre d'une mise à jour (refonte complète, ajout de fonctionnalités), je vous fais un devis sur mesure avant de commencer. Pas de surprise.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ LIBERTÉ ═══ -->
-<section id="liberte">
-  <div class="liberte-in">
-    <span class="lbl r">Votre liberté</span>
-    <h2 class="h2 r d1">Votre site<br><em>vous appartient.</em></h2>
-    <p class="liberte-body r d2">Votre site est hébergé sur un espace ouvert à votre nom, avec votre propre domaine et votre email professionnel. Vous en êtes propriétaire à 100%. Je ne vends pas d'abonnement. Je ne vous rends pas dépendant de moi. Si vous souhaitez modifier votre site demain avec quelqu'un d'autre, vous partez avec un code propre et vous êtes totalement libre.</p>
-    <div class="liberte-points r d3">
-      <div class="lp"><h4>Tout est à votre nom</h4><p>Hébergement, domaine, email pro - tout est sur un compte ouvert à votre nom. Pas le mien.</p></div>
-      <div class="lp"><h4>Zéro abonnement chez moi</h4><p>Pas de plateforme mensuelle, pas de CMS payant, pas de licence. Seul coût récurrent : votre hébergement (moins de 20€/an).</p></div>
-      <div class="lp"><h4>Base saine & libre</h4><p>Un code HTML propre. N'importe quel développeur peut reprendre la main. Vous êtes libre.</p></div>
     </div>
   </div>
 </section>
