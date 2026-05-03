@@ -973,5 +973,24 @@
   // Cacher la scrollbar CSS
   if(carousel){ var s=document.createElement('style'); s.textContent='#carousel::-webkit-scrollbar{display:none}'; document.head.appendChild(s); }
 </script>
+  <!-- Cloudflare Web Analytics — avec exclusion admin via ?notrack -->
+  <script>
+    (function(){
+        // Si ?notrack dans l'URL → flag permanent pour exclure cet appareil
+      if(location.search.indexOf('notrack')!==-1){
+            try{localStorage.setItem('cf_notrack','1')}catch(e){}
+            return;
+      }
+        // Si flag présent → pas de tracking
+        try{if(localStorage.getItem('cf_notrack')==='1') return;}catch(e){}
+        // Sinon → charger le beacon Cloudflare
+        var s=document.createElement('script');
+        s.defer=true;
+        s.src='https://static.cloudflareinsights.com/beacon.min.js';
+        s.setAttribute('data-cf-beacon','{"token":"b09f80f0b5484a40b199bc8578948d74"}');
+        document.body.appendChild(s);
+    })();
+  </script>
+  </script>
 </body>
 </html>
