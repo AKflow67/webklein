@@ -334,6 +334,10 @@
     .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--coral)}
     .fg textarea{min-height:95px;resize:vertical}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    /* ── CARTE EN COURS ── */
+    .card-wip-overlay{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,249,245,.82);backdrop-filter:blur(4px);opacity:0;transition:opacity .4s cubic-bezier(.16,1,.3,1)}
+    .card-wip:hover .card-wip-overlay{opacity:1}
+
     .toast{position:fixed;top:76px;left:50%;transform:translateX(-50%) translateY(-12px);z-index:9999;background:rgba(250,249,245,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--dark);padding:.7rem 1.6rem;border-radius:40px;font-size:.76rem;font-weight:500;letter-spacing:.03em;display:flex;align-items:center;gap:.55rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid rgba(217,119,87,.2);opacity:0;transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);pointer-events:none}
     .toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
     .toast-dot{width:8px;height:8px;border-radius:50%;background:var(--coral);flex-shrink:0}
@@ -691,19 +695,24 @@
         </div>
       </a>
 
-      <!-- Aline Haelberg -->
-      <a href="https://alinehaelberg.netlify.app" target="_blank" rel="noopener" class="car-card" style="flex:0 0 calc(33.33% - 1rem);min-width:280px;background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;scroll-snap-align:start;transition:transform var(--ease),box-shadow var(--ease);display:flex;flex-direction:column;text-decoration:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 56px rgba(20,20,19,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <!-- Aline Haelberg (en cours) -->
+      <div class="car-card card-wip" style="flex:0 0 calc(33.33% - 1rem);min-width:280px;background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;position:relative;cursor:default">
         <div style="aspect-ratio:16/9;position:relative;overflow:hidden;background:#3a5a50">
-          <iframe src="https://alinehaelberg.netlify.app" style="position:absolute;top:0;left:0;width:300%;height:300%;transform:scale(.333);transform-origin:top left;pointer-events:none;border:none" loading="lazy" title="Aline Haelberg"></iframe>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,15,.5) 0%,transparent 40%)"></div>
+          <iframe src="https://alinehaelberg.netlify.app" style="position:absolute;top:0;left:0;width:300%;height:300%;transform:scale(.333);transform-origin:top left;pointer-events:none;border:none;filter:blur(3px)" loading="lazy" title="Aline Haelberg"></iframe>
+          <div style="position:absolute;inset:0;background:rgba(250,249,245,.45)"></div>
+        </div>
+        <div class="card-wip-overlay">
+          <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:var(--coral);margin-bottom:.4rem"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <span style="font-family:var(--serif);font-size:.88rem;font-style:italic;color:var(--dark)">Bientôt dévoilé…</span>
+          <span style="font-size:.65rem;color:var(--mid);margin-top:.2rem">Site en cours de finition</span>
         </div>
         <div style="padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column">
           <div style="font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-dk);margin-bottom:.35rem">Kinésiologue · Bagnères-de-Bigorre</div>
           <div style="font-family:var(--serif);font-size:1.1rem;margin-bottom:.45rem">Aline Haelberg</div>
           <p style="font-size:.78rem;color:var(--mid);line-height:1.6;flex:1;margin-bottom:.9rem">Cabinet local et supervision nationale de kinésiologues. Deux univers, un seul site élégant.</p>
-          <span style="font-size:.65rem;font-weight:600;color:var(--coral-dk);display:flex;align-items:center;gap:.3rem">alinehaelberg.netlify.app →</span>
+          <span style="font-size:.65rem;font-weight:500;color:var(--gray);display:flex;align-items:center;gap:.3rem;font-style:italic">En cours de création ✦</span>
         </div>
-      </a>
+      </div>
 
       <!-- Fanny Defoort -->
       <a href="https://fannydefoort.netlify.app" target="_blank" rel="noopener" class="car-card" style="flex:0 0 calc(33.33% - 1rem);min-width:280px;background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;scroll-snap-align:start;transition:transform var(--ease),box-shadow var(--ease);display:flex;flex-direction:column;text-decoration:none" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 24px 56px rgba(20,20,19,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
