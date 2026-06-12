@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Artisan Augmenté - Accompagnement IA pour artisans · WebKlein</title>
+  <meta name="description" content="Ateliers et accompagnement IA pour artisans, animés par Tom Klein, menuisier-ébéniste en activité. Devis, mails, mémoire d'entreprise : récupérez vos soirées. Hautes-Pyrénées.">
+  <link rel="canonical" href="https://www.webklein.fr/artisan-augmente/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="L'Artisan Augmenté - Accompagnement IA pour artisans">
+  <meta property="og:description" content="Par un artisan, pour des artisans. Démonstration sur un système réel, mise en pratique, et vous repartez avec votre assistant configuré.">
+  <meta property="og:url" content="https://www.webklein.fr/artisan-augmente/">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "L'Artisan Augmenté - Accompagnement IA pour artisans",
+    "serviceType": "Accompagnement à l'intelligence artificielle pour artisans et TPE",
+    "areaServed": "Hautes-Pyrénées et départements limitrophes",
+    "url": "https://www.webklein.fr/artisan-augmente/",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "WebKlein",
+      "url": "https://www.webklein.fr",
+      "email": "contact@webklein.fr",
+      "address": { "@type": "PostalAddress", "addressLocality": "Gerde", "postalCode": "65200", "addressCountry": "FR" }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Offres d'accompagnement IA",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier découverte collectif (demi-journée, par participant)" }, "price": "280", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Démarrage IA artisan (demi-journée individuelle)" }, "price": "350", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier intra organisme (demi-journée, jusqu'à 10 participants)" }, "price": "1500", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint système complet (2 jours en entreprise)" }, "price": "1900", "priceCurrency": "EUR" }
+      ]
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --ink:      #221611;
+      --ink-soft: #4d3a30;
+      --ink-mute: #8a7468;
+      --paper:    #faf6f2;
+      --cream:    #f3eae2;
+      --cream-dk: #eaddd1;
+      --terra:    #b5512f;
+      --terra-2:  #d97757;
+      --terra-lt: #e9a185;
+      --terra-dp: #8c3b20;
+      --sand:     #e8c9b3;
+      --line:     rgba(34,22,17,.1);
+      --serif:    'Fraunces', Georgia, serif;
+      --sans:     'DM Sans', system-ui, sans-serif;
+      --ease:     cubic-bezier(.2,0,0,1);
+      --grad-lis: linear-gradient(90deg, transparent 0%, var(--terra) 18%, var(--sand) 50%, var(--terra) 82%, transparent 100%);
+      --grad-btn: linear-gradient(180deg, #d97757 0%, #b5512f 100%);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);font-weight:300;font-size:1rem;line-height:1.7;color:var(--ink);background:var(--paper)}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    section{padding:6rem 0;position:relative}
+    .lisere{position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-lis)}
+    .h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:300;line-height:1.14;margin-bottom:1.4rem;letter-spacing:-.01em}
+    .kicker{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:1.1rem}
+    .lead{font-size:1.06rem;color:var(--ink-soft);max-width:640px}
+
+    /* Boutons - effets agencementklein */
+    .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:.85rem;letter-spacing:.04em;padding:.85rem 1.9rem;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:all .18s var(--ease)}
+    .btn-terra{background:var(--grad-btn);color:#fdf9f6;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 2px 8px rgba(181,81,47,.3)}
+    .btn-terra::after{content:"";position:absolute;left:50%;right:50%;bottom:7px;height:2px;background:var(--sand);border-radius:1px;transition:left .3s var(--ease),right .3s var(--ease)}
+    .btn-terra:hover{transform:translateY(-2px);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 6px 16px rgba(181,81,47,.4)}
+    .btn-terra:hover::after{left:22px;right:22px}
+    .btn-outline{background:transparent;border-color:var(--terra);color:var(--ink)}
+    .btn-draw{position:relative}
+    .btn-draw::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from -90deg,var(--terra) var(--p,0%),transparent var(--p,0%));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:--p .55s var(--ease),opacity .2s var(--ease);pointer-events:none}
+    @property --p{syntax:"<percentage>";inherits:false;initial-value:0%}
+    .btn-draw:hover::before{--p:100%;opacity:1}
+    .btn-outline.btn-draw:hover{border-color:transparent;color:var(--terra-dp)}
+    .btn-draw.on-dark{border-color:rgba(255,255,255,.35);color:#fff}
+    .btn-draw.on-dark::before{background:conic-gradient(from -90deg,var(--sand) var(--p,0%),transparent var(--p,0%))}
+    .btn-draw.on-dark:hover{border-color:transparent;color:var(--sand)}
+
+    /* Reveal */
+    .r{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .r.in{opacity:1;transform:none}
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(250,246,242,.9);backdrop-filter:blur(14px)}
+    nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad-lis);opacity:.7}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    .logo{font-family:var(--serif);font-size:1.05rem;font-weight:400;letter-spacing:-.01em}
+    .logo span{color:var(--terra)}
+    .nav-links{display:flex;gap:1.9rem;align-items:center;list-style:none}
+    .nav-links a:not(.btn){position:relative;font-size:.79rem;font-weight:500;color:var(--ink-soft);padding-bottom:3px;transition:color .25s var(--ease)}
+    .nav-links a:not(.btn)::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:2px;background:var(--terra);transition:left .28s var(--ease),right .28s var(--ease)}
+    .nav-links a:not(.btn):hover{color:var(--ink)}
+    .nav-links a:not(.btn):hover::after{left:0;right:0}
+    nav .btn{padding:.55rem 1.25rem;font-size:.76rem}
+    @media(max-width:760px){.nav-links a:not(.btn){display:none}}
+
+    /* HERO */
+    .hero{position:relative;background:linear-gradient(160deg,#27130b 0%,#3c1a0e 45%,#5a2413 100%);color:#fdf9f6;padding:12rem 0 7.5rem;overflow:hidden}
+    .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad-lis)}
+    .hero-circle{position:absolute;border:1.5px solid rgba(232,201,179,.18);border-radius:50%;pointer-events:none}
+    .hc1{width:620px;height:620px;top:-300px;right:-180px}
+    .hc2{width:420px;height:420px;top:-180px;right:-60px;border-color:rgba(217,119,87,.25)}
+    .hc3{width:300px;height:300px;bottom:-160px;left:-100px}
+    .hero-kicker{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-lt);margin-bottom:1.6rem}
+    .hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5.8vw,4.6rem);font-weight:300;line-height:1.07;letter-spacing:-.015em;max-width:840px;margin-bottom:1.8rem}
+    .hero p{font-size:1.1rem;color:rgba(253,249,246,.75);max-width:620px;margin-bottom:2.6rem}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(253,249,246,.6)}
+    .hero-tag strong{font-family:var(--serif);font-weight:400;font-size:1.3rem;color:var(--sand)}
+
+    /* CONSTAT */
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    @media(max-width:840px){.grid3{grid-template-columns:1fr}}
+    .card{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:2.1rem 1.9rem;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);overflow:hidden}
+    .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-lis);opacity:0;transition:opacity .3s var(--ease)}
+    .card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(34,22,17,.12);border-color:var(--sand)}
+    .card:hover::before{opacity:1}
+    .card h3{font-family:var(--serif);font-size:1.28rem;font-weight:400;margin-bottom:.7rem}
+    .card p{font-size:.93rem;color:var(--ink-soft)}
+    .quote{position:relative;font-family:var(--serif);font-size:1.3rem;font-weight:300;line-height:1.55;max-width:720px;margin:3.4rem auto 0;padding:1.6rem 2rem;background:var(--cream);border-radius:14px}
+    .quote::before{content:"";position:absolute;top:0;left:24px;right:24px;height:2px;background:var(--grad-lis)}
+
+    /* SEQUENCES */
+    .seq{background:var(--cream)}
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+    @media(max-width:840px){.steps{grid-template-columns:1fr}}
+    .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:2.1rem 1.9rem 1.9rem;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+    .step:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(34,22,17,.12);border-color:var(--sand)}
+    .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:var(--serif);font-size:2.7rem;font-weight:300;line-height:1;color:var(--terra-lt);display:block;margin-bottom:1rem}
+    .step h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:.2rem}
+    .step .dur{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:.75rem}
+    .step p{font-size:.93rem;color:var(--ink-soft)}
+
+    /* TAKEAWAY */
+    .checklist{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem 2.5rem;margin-top:2.8rem}
+    @media(max-width:760px){.checklist{grid-template-columns:1fr}}
+    .checklist li{position:relative;padding-left:2.3rem;font-size:.97rem;color:var(--ink-soft)}
+    .checklist li strong{display:block;font-weight:600;color:var(--ink)}
+    .checklist li::before{content:"";position:absolute;left:0;top:.3rem;width:22px;height:22px;border-radius:50%;background:var(--sand) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%238c3b20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center no-repeat}
+
+    /* QUI */
+    .qui{background:linear-gradient(160deg,#27130b 0%,#3c1a0e 55%,#4d2010 100%);color:#fdf9f6}
+    .qui::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad-lis)}
+    .qui-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:start}
+    @media(max-width:840px){.qui-grid{grid-template-columns:1fr}}
+    .qui .h2{color:#fdf9f6}
+    .qui p{color:rgba(253,249,246,.75);margin-bottom:1.1rem;font-size:.98rem}
+    .facts{position:relative;background:rgba(253,249,246,.05);border:1px solid rgba(232,201,179,.2);border-radius:14px;padding:2rem 1.8rem}
+    .facts::before{content:"";position:absolute;top:0;left:20px;right:20px;height:2px;background:var(--grad-lis)}
+    .facts div{padding:.9rem 0;border-bottom:1px solid rgba(232,201,179,.14)}
+    .facts div:last-child{border-bottom:none}
+    .facts strong{font-family:var(--serif);font-weight:400;font-size:1.12rem;color:var(--sand);display:block}
+    .facts span{font-size:.85rem;color:rgba(253,249,246,.6)}
+
+    /* OFFRES */
+    .offres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;margin-top:3rem}
+    @media(max-width:1000px){.offres-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.offres-grid{grid-template-columns:1fr}}
+    .offre{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;padding:2rem 1.7rem 1.8rem;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);overflow:hidden}
+    .offre::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-lis)}
+    .offre:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(34,22,17,.13);border-color:var(--sand)}
+    .offre.star{background:linear-gradient(165deg,#2c1409 0%,#47200f 100%);border-color:transparent;color:#fdf9f6}
+    .offre h3{font-family:var(--serif);font-size:1.18rem;font-weight:400;margin-bottom:.9rem}
+    .offre.star h3{color:var(--sand)}
+    .prix{font-family:var(--serif);font-size:2.4rem;font-weight:300;line-height:1;color:var(--terra-dp)}
+    .offre.star .prix{color:#fdf9f6}
+    .prix small{font-family:var(--sans);font-size:.74rem;font-weight:400;color:var(--ink-mute)}
+    .offre.star .prix small{color:rgba(253,249,246,.55)}
+    .offre ul{list-style:none;margin:1.3rem 0 0;flex-grow:1}
+    .offre li{position:relative;font-size:.87rem;color:var(--ink-soft);padding:.32rem 0 .32rem 1.25rem}
+    .offre.star li{color:rgba(253,249,246,.8)}
+    .offre li::before{content:"";position:absolute;left:0;top:.85rem;width:6px;height:6px;border-radius:50%;background:var(--terra-2)}
+    .offre.star li::before{background:var(--sand)}
+    .offres-note{margin-top:2rem;font-size:.85rem;color:var(--ink-mute);max-width:760px}
+    .offres-note a{color:var(--terra-dp);font-weight:500;border-bottom:1px solid var(--sand)}
+    .offres-note a:hover{color:var(--terra)}
+
+    /* FAQ */
+    .faq{background:var(--cream)}
+    .faq-list{max-width:780px}
+    .faq details{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:.9rem;padding:1.15rem 1.5rem;transition:border-color .3s var(--ease);overflow:hidden}
+    .faq details::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-lis);opacity:0;transition:opacity .3s var(--ease)}
+    .faq details[open]::before,.faq details:hover::before{opacity:1}
+    .faq details:hover{border-color:var(--sand)}
+    .faq summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:500;font-size:.96rem;cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--terra);line-height:1;flex:none;transition:transform .3s var(--ease)}
+    .faq details[open] summary::after{transform:rotate(45deg)}
+    .faq details p{margin-top:.9rem;font-size:.92rem;color:var(--ink-soft)}
+
+    /* CTA BAND */
+    .cta-band{position:relative;background:linear-gradient(160deg,#27130b 0%,#3c1a0e 45%,#5a2413 100%);color:#fdf9f6;text-align:center;overflow:hidden}
+    .cta-band::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(232,201,179,.16);border-radius:50%;top:-280px;right:-160px}
+    .cta-band::after{content:"";position:absolute;width:380px;height:380px;border:1.5px solid rgba(217,119,87,.2);border-radius:50%;bottom:-190px;left:-110px}
+    .cta-band .h2{color:#fdf9f6}
+    .cta-band .lead{margin:0 auto 2.5rem;color:rgba(253,249,246,.72)}
+    .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+    .tel-line{margin-top:1.8rem;font-size:.9rem;color:rgba(253,249,246,.55)}
+    .tel-line a{color:var(--sand);font-weight:500}
+    .tel-line a:hover{color:#fff}
+
+    footer{position:relative;background:#1c0e07;color:rgba(253,249,246,.55);padding:2.8rem 0;font-size:.83rem}
+    footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-lis)}
+    .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    footer a{color:rgba(253,249,246,.75);transition:color .25s var(--ease)}
+    footer a:hover{color:var(--terra-lt)}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="../">Web<span>Klein</span> <span style="color:var(--ink-mute);font-size:.8rem">· L'Artisan Augmenté</span></a>
+    <ul class="nav-links">
+      <li><a href="#atelier">L'atelier</a></li>
+      <li><a href="#qui">Qui anime</a></li>
+      <li><a href="#offres">Offres</a></li>
+      <li><a href="../">Sites web</a></li>
+      <li><a href="#contact" class="btn btn-terra">Réserver</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-circle hc1"></div><div class="hero-circle hc2"></div><div class="hero-circle hc3"></div>
+  <div class="wrap">
+    <div class="hero-kicker r in">Accompagnement IA - par un artisan, pour des artisans</div>
+    <h1 class="r in d1">L'IA peut vous rendre vos soirées. Je vous montre comment.</h1>
+    <p class="r in d2">Je suis menuisier-ébéniste. Mes devis partent en 24 h, mes mails s'écrivent en 2 minutes et mon suivi d'entreprise se fait presque tout seul. En une demi-journée, je vous montre le système réel qui fait tourner mon entreprise, et vous repartez avec le vôtre, déjà démarré.</p>
+    <div class="hero-cta r in d3">
+      <a class="btn btn-terra" href="#contact">Réserver une place</a>
+      <a class="btn btn-outline btn-draw on-dark" href="#atelier">Voir le programme</a>
+      <span class="hero-tag"><strong>280&nbsp;€</strong> la demi-journée, tout compris</span>
+    </div>
+  </div>
+</header>
+
+<section id="constat">
+  <div class="wrap">
+    <div class="kicker r">Le constat</div>
+    <h2 class="h2 r d1">Le métier, vous savez faire. C'est le reste qui vous mange.</h2>
+    <div class="grid3">
+      <div class="card r d1">
+        <h3>Les devis du soir</h3>
+        <p>Faits à 21 h sur un coin de table, envoyés en retard. Certains ne partent jamais : chaque devis non envoyé est un chantier perdu.</p>
+      </div>
+      <div class="card r d2">
+        <h3>Les mails qui s'empilent</h3>
+        <p>Relances, assurances, fournisseurs, clients inquiets. Chaque mail demande dix minutes que vous n'avez pas. Alors ils attendent.</p>
+      </div>
+      <div class="card r d3">
+        <h3>ChatGPT vous a déçu</h3>
+        <p>Réponses génériques, tout à réexpliquer à chaque fois. Ce n'est pas l'IA le problème : elle ne connaît pas votre entreprise. Et ça, ça se règle.</p>
+      </div>
+    </div>
+    <p class="quote r">« Une IA sans mémoire, c'est un stagiaire qui arrive chaque matin en ayant tout oublié de la veille. Je vous apprends à lui donner une mémoire. »</p>
+  </div>
+</section>
+
+<section id="atelier" class="seq">
+  <div class="lisere"></div>
+  <div class="wrap">
+    <div class="kicker r">L'atelier découverte - une demi-journée</div>
+    <h2 class="h2 r d1">Pas de théorie. Mon vrai système, en direct.</h2>
+    <p class="lead r d2">Tout ce que je montre tourne réellement dans mon entreprise de menuiserie. Vous voyez les vrais outils, les vrais devis, les vrais mails. Et vous mettez les mains dedans.</p>
+    <div class="steps">
+      <div class="step r d1">
+        <span class="dur">45 minutes</span>
+        <h3>La démonstration</h3>
+        <p>Un devis complet sorti en 15 minutes à partir de notes dictées au téléphone. Un mail client délicat rédigé en 2 minutes. Le point de situation de mon entreprise généré sous vos yeux. Vous jugez sur pièces.</p>
+      </div>
+      <div class="step r d2">
+        <span class="dur">45 minutes</span>
+        <h3>Les trois usages rentables</h3>
+        <p>Devis et chiffrage, mails et administratif, photos et communication. Pour chacun : comment faire, combien de temps ça fait gagner, et les pièges à éviter. Un devis ne part jamais sans relecture : on en parle franchement.</p>
+      </div>
+      <div class="step r d3">
+        <span class="dur">1 heure</span>
+        <h3>La mémoire d'entreprise</h3>
+        <p>Le cœur de l'atelier. Pourquoi l'IA générique déçoit, et comment quelques fiches simples, vos tarifs, vos clients, vos règles, la transforment en assistant qui connaît vraiment votre boîte. Démonstration avant/après.</p>
+      </div>
+      <div class="step r d4">
+        <span class="dur">1 heure</span>
+        <h3>La mise en pratique</h3>
+        <p>Chacun configure un assistant sur son propre téléphone, rédige sa première fiche entreprise et traite un cas réel : son devis, son mail. Vous repartez avec un plan d'action et 3 réflexes à installer dans les 30 jours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="repartir">
+  <div class="wrap">
+    <div class="kicker r">Concrètement</div>
+    <h2 class="h2 r d1">Vous repartez avec</h2>
+    <ul class="checklist">
+      <li class="r d1"><strong>Un assistant configuré</strong>Sur votre téléphone, avec votre fiche entreprise déjà en place. Il fonctionne le soir même.</li>
+      <li class="r d2"><strong>Les modèles métier</strong>Devis, mail client, relance, post Google Business : des trames prêtes à adapter à votre activité.</li>
+      <li class="r d3"><strong>Une fiche mémo</strong>Les 3 réflexes du quotidien et les pièges à éviter. Sur papier, à garder dans le camion.</li>
+      <li class="r d4"><strong>30 minutes de suivi offertes</strong>Un appel dans les 30 jours pour débloquer ce qui coince et ancrer les habitudes.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="qui" class="qui">
+  <div class="lisere"></div>
+  <div class="wrap qui-grid">
+    <div>
+      <div class="kicker r" style="color:var(--terra-lt)">Qui anime</div>
+      <h2 class="h2 r d1">Un artisan, pas un consultant.</h2>
+      <p class="r d2">Je m'appelle Tom Klein. Je suis menuisier-ébéniste, formé à l'école d'ébénisterie d'Alsace, installé à Bagnères-de-Bigorre où je dirige Agencement Klein : cuisines, agencement sur mesure, parquets, menuiseries.</p>
+      <p class="r d2">Comme vous, je n'ai pas de secrétaire. Alors j'ai construit, outil par outil, un système d'IA qui gère mes devis, mes mails, mon suivi de chantiers et la mémoire de mon entreprise. Ce système, je l'utilise tous les jours, entre deux poses.</p>
+      <p class="r d3">Je ne vous vends pas une théorie apprise dans un livre : je vous montre ce qui marche sur un vrai carnet de commandes, avec les mains dans la sciure.</p>
+    </div>
+    <div class="facts r d2">
+      <div><strong>Menuisier-ébéniste</strong><span>en activité, EURL Agencement Klein, Bagnères-de-Bigorre</span></div>
+      <div><strong>Devis en 24 h</strong><span>de la visite chantier au devis envoyé, grâce au système</span></div>
+      <div><strong>Deux activités pilotées par IA</strong><span>la menuiserie, et WebKlein qui crée des sites pour artisans</span></div>
+      <div><strong>Des centaines d'heures</strong><span>de pratique réelle des outils IA appliqués au métier</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="offres">
+  <div class="wrap">
+    <div class="kicker r">Les offres</div>
+    <h2 class="h2 r d1">Quatre façons de s'y mettre</h2>
+    <p class="lead r d2">Tout est en one-shot : un début, une fin, pas d'abonnement, pas d'engagement. Vous restez maître de vos outils, comme de votre site.</p>
+    <div class="offres-grid">
+      <div class="offre star r d1">
+        <h3>Atelier découverte</h3>
+        <div class="prix">280&nbsp;€ <small>/ participant</small></div>
+        <ul>
+          <li>Demi-journée, 6 à 10 artisans</li>
+          <li>Démonstrations sur système réel</li>
+          <li>Assistant configuré sur votre téléphone</li>
+          <li>Modèles métier + fiche mémo</li>
+          <li>30 min de suivi offertes</li>
+        </ul>
+      </div>
+      <div class="offre r d2">
+        <h3>Démarrage IA solo</h3>
+        <div class="prix">350&nbsp;€ <small>/ demi-journée</small></div>
+        <ul>
+          <li>Chez vous, en tête-à-tête</li>
+          <li>Installation et prise en main</li>
+          <li>Sur vos cas concrets du moment</li>
+          <li>Idéal en complément d'un site</li>
+        </ul>
+      </div>
+      <div class="offre r d3">
+        <h3>Atelier intra</h3>
+        <div class="prix">1&nbsp;500&nbsp;€ <small>forfait</small></div>
+        <ul>
+          <li>Pour cabinets comptables, organisations professionnelles</li>
+          <li>Jusqu'à 10 de vos clients ou adhérents</li>
+          <li>Dans vos locaux, clé en main</li>
+          <li>Un avantage concret à offrir</li>
+        </ul>
+      </div>
+      <div class="offre r d4">
+        <h3>Sprint système complet</h3>
+        <div class="prix">1&nbsp;900&nbsp;€ <small>/ 2 jours</small></div>
+        <ul>
+          <li>Dans votre entreprise</li>
+          <li>Mémoire d'entreprise complète</li>
+          <li>Devis assisté, modèles de mails, routine hebdomadaire</li>
+          <li>Mon système, adapté à votre métier</li>
+        </ul>
+      </div>
+    </div>
+    <p class="offres-note r">Tarifs HT, TVA 20 % en sus. Accompagnement à distance après atelier ou sprint : 80 € / heure. Et si votre présence en ligne est aussi à construire, <a href="../">WebKlein crée votre site à partir de 390 €</a> : les deux se complètent bien.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="lisere"></div>
+  <div class="wrap">
+    <div class="kicker r">Questions fréquentes</div>
+    <h2 class="h2 r d1">Avant de réserver</h2>
+    <div class="faq-list">
+      <details class="r d1">
+        <summary>Il faut être à l'aise avec l'informatique ?</summary>
+        <p>Non. Si vous savez envoyer un SMS et une photo, vous avez le niveau. Tout se fait depuis votre téléphone, et la mise en pratique est accompagnée pas à pas.</p>
+      </details>
+      <details class="r d2">
+        <summary>Quel matériel apporter ?</summary>
+        <p>Votre smartphone suffit. Un ordinateur portable est un plus si vous en avez un. Apportez aussi un vrai cas : un devis à faire, un mail compliqué à écrire. On travaille dessus.</p>
+      </details>
+      <details class="r d3">
+        <summary>Est-ce une formation financée (OPCO, FAFCEA) ?</summary>
+        <p>Non, et c'est assumé : c'est un accompagnement pratique, pas une formation certifiée. Pas de dossier, pas de paperasse, un tarif pensé en conséquence. Comptez ce que vous coûte chaque semaine un seul devis fait le soir : l'atelier se rembourse vite.</p>
+      </details>
+      <details class="r d4">
+        <summary>Ça marche pour mon métier ?</summary>
+        <p>Devis, mails, relances, photos de chantier : tous les corps de métier ont les mêmes besoins. Maçon, plombier, électricien, peintre, paysagiste, couvreur : les exemples changent, le système est le même.</p>
+      </details>
+      <details class="r d4">
+        <summary>Et mes données, mes clients ?</summary>
+        <p>On en parle pendant l'atelier : ce qu'on peut confier à l'IA, ce qu'on ne lui confie pas, et comment rester maître de ses informations. C'est une partie du programme, pas une note de bas de page.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-band">
+  <div class="wrap">
+    <div class="kicker r" style="color:var(--terra-lt)">Réserver</div>
+    <h2 class="h2 r d1">Le prochain atelier se prépare</h2>
+    <p class="lead r d2">Dites-moi votre métier et votre secteur, je vous tiens au courant des prochaines dates. Groupes de 6 à 10 : les places partent par petites fournées.</p>
+    <div class="cta-actions r d3">
+      <a class="btn btn-terra" href="mailto:contact@webklein.fr?subject=Atelier%20L%27Artisan%20Augment%C3%A9">Écrire un mail</a>
+      <a class="btn btn-outline btn-draw on-dark" href="tel:+33603574547">06 03 57 45 47</a>
+    </div>
+    <p class="tel-line r d4">Cabinet comptable ou organisation professionnelle ? <a href="mailto:contact@webklein.fr?subject=Atelier%20intra">Parlons d'un atelier intra pour vos clients.</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>L'Artisan Augmenté est un programme <a href="../">WebKlein - L'Artisan du Web</a> · Tom Klein, Gerde (65)</div>
+    <div><a href="../#tarifs">Sites web artisans</a> · <a href="mailto:contact@webklein.fr">contact@webklein.fr</a></div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.r:not(.in)').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
