@@ -325,8 +325,8 @@
   #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--coral),var(--coral-light));z-index:999;width:0}
 
   /* ---------- Reveal ---------- */
-  .rv{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
-  .rv.in{opacity:1;transform:none}
+  .js .rv{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+  .js .rv.in{opacity:1;transform:none}
   .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 
   /* ---------- Responsive ---------- */
@@ -856,6 +856,9 @@
 <button id="scroll-top" aria-label="Haut de page">↑</button>
 
 <script>
+  // Active le mode JS (révélations) seulement si le script tourne
+  document.body.classList.add('js');
+
   // Header shadow + progress + scroll-top
   var header=document.getElementById('header'), prog=document.getElementById('prog'), top=document.getElementById('scroll-top');
   function onScroll(){
@@ -881,10 +884,4 @@
   function scrollCar(dir){
     var c=document.getElementById('car');
     var card=c.querySelector('.car-card');
-    var step=card?card.getBoundingClientRect().width+22:340;
-    c.scrollBy({left:dir*step,behavior:'smooth'});
-  }
-</script>
-
-</body>
-</html>
+    var step=card?card.getBo
