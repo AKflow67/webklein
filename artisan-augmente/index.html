@@ -320,6 +320,13 @@
     }
     @media(max-width:760px){.logo{font-size:1.15rem;white-space:nowrap}.logo span[style]{font-size:.72rem !important}}
 
+    /* Passage vers l'autre page (Sites web) : séparé des ancres par un filet, dans un cadre discret, avec une flèche */
+    .nav-links a[href="../"]{margin-left:.5rem;padding:6px 15px;border:1px solid var(--line);border-radius:999px;transition:border-color .3s var(--ease),background .3s var(--ease),color .3s var(--ease)}
+    .nav-links a[href="../"]::before{content:"";position:absolute;left:-1.25rem;top:50%;width:1px;height:20px;background:var(--line);transform:translateY(-50%)}
+    .nav-links a[href="../"]::after{content:"→";position:static;display:inline-block;height:auto;background:none;margin-left:8px;color:var(--coral);transition:transform .3s var(--ease)}
+    .nav-links a[href="../"]:hover{border-color:var(--coral);background:var(--paper);color:var(--coral-deep)}
+    .nav-links a[href="../"]:hover::after{transform:translateX(4px)}
+
   /* =============================================================
      EFFETS, NOYAU COMMUN (accueil et Artisan augmenté)
      Un vocabulaire, décliné : le trait qui se trace.
