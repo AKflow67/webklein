@@ -492,6 +492,11 @@
   .mobile-menu a[href="artisan-augmente/"]{margin-top:12px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;display:flex;justify-content:space-between;align-items:center}
   .mobile-menu a[href="artisan-augmente/"]::after{content:"→";color:var(--coral)}
 
+  /* Nouvel ordre de fin de page (réalisations, limites, tarifs, accompagnement IA, contact) :
+     les bandes ton sur ton alternent avec le fond clair, jamais deux bandes collées */
+  #limites.section-alt{background:transparent;border-radius:0;margin:0}
+  #artisan-augmente.dark{background:var(--paper-dk)}
+
   /* =============================================================
      EFFETS, NOYAU COMMUN (accueil et Artisan augmenté)
      Un vocabulaire, décliné : le trait qui se trace.
@@ -590,6 +595,9 @@
     .fx *,.fx *::before,.fx *::after{transition-duration:0s !important;transition-delay:0s !important}
     .fx .w>span{transform:none}
   }
+  /* pièces qui arrivent déjà dessinées : un simple fondu */
+  .fx-piece.fxp{opacity:0;transition:opacity .8s var(--ease)}
+  .fx-piece.fxp.on{opacity:1}
 
 
   /* ===== Accueil : effets propres à la page (le noyau commun est dans fx-core.css) ===== */
@@ -850,6 +858,10 @@
     .fx .trust svg polyline{stroke-dashoffset:0}
     .fx .car-wrap{-webkit-mask-image:none;mask-image:none}
   }
+
+  /* Réalisations : le contour se ferme au survol, sans barre (elle passerait sous la vignette) */
+  .car-card.fx-frame{box-shadow:none}
+  .car-card.fx-frame::after{z-index:4}
   </style>
 </head>
 <body>
@@ -1374,21 +1386,36 @@
   </div>
 </section>
 
-<!-- ═══ ARTISAN AUGMENTÉ ═══ -->
-<section class="section dark" id="artisan-augmente">
-  <div class="container" style="position:relative;z-index:1">
-    <div class="aa-grid">
-      <div class="rv">
-        <span class="kicker">Nouveau · Accompagnement IA</span>
-        <h2 class="tfilet">L'Artisan Augmenté.</h2>
-        <p style="margin-top:26px;color:rgba(250,249,245,.72)">Votre site, c'est la vitrine. Mais le plus gros gain de temps est dans l'arrière-boutique : les devis du soir, les mails qui s'empilent, les relances oubliées. Je gère tout ça avec l'IA dans ma propre entreprise de menuiserie, et je vous montre comment faire pareil dans la vôtre.</p>
-        <p style="color:rgba(250,249,245,.72)">Ateliers pratiques par un artisan, pour des artisans : démonstration sur mon système réel, et vous repartez avec un assistant configuré sur votre téléphone, qui connaît votre entreprise.</p>
-        <a href="artisan-augmente/" class="btn btn-coral" style="margin-top:1.6rem">Découvrir le programme →</a>
+<!-- ═══ LIMITES ═══ -->
+<section class="section section-alt" id="limites">
+  <div class="container">
+    <div style="text-align:center" class="rv">
+      <span class="kicker">Honnêteté</span>
+      <h2 class="tfilet tfilet-c">Ce que je fais, ce que je ne fais pas.</h2>
+      <p class="lead" style="max-width:520px;margin:18px auto 0">Cette approche est taillée pour les sites vitrines et elle excelle dans ce domaine. Je préfère être clair dès le départ.</p>
+    </div>
+    <div class="lim-grid">
+      <div class="lim yes rv">
+        <h3>Ce que je fais</h3>
+        <div class="lim-row">Site vitrine 1 page (scroll)</div>
+        <div class="lim-row">Design unique, jamais un template</div>
+        <div class="lim-row">Formulaire de contact</div>
+        <div class="lim-row">Carte Google Maps intégrée</div>
+        <div class="lim-row">SEO technique solide</div>
+        <div class="lim-row">Animations et effets au défilement</div>
+        <div class="lim-row">Responsive mobile &amp; tablette</div>
+        <div class="lim-row">Fiche Google Business optimisée</div>
+        <div class="lim-row">Prise en main des outils IA pour votre activité</div>
+        <div class="lim-row">Modifications sur demande (50€/forfait)</div>
       </div>
-      <div class="rv d1" style="display:flex;flex-direction:column;gap:1rem">
-        <div class="aa-chip"><div class="pr">280€ <small>/ participant</small></div><div class="ds">Atelier découverte collectif - demi-journée, 6 à 10 artisans</div></div>
-        <div class="aa-chip"><div class="pr">480€ <small>/ demi-journée</small></div><div class="ds">Démarrage IA en tête-à-tête, en visio, directement sur votre ordinateur et vos cas concrets</div></div>
-        <div class="aa-chip"><div class="pr">1 900€ <small>/ 2 jours</small></div><div class="ds">Sprint système complet : mon système, installé dans votre entreprise (petites structures, jusqu'à 5 personnes)</div></div>
+      <div class="lim no rv d1">
+        <h3>Ce que je ne fais pas</h3>
+        <div class="lim-row">Blog géré en autonomie par le client</div>
+        <div class="lim-row">Boutique en ligne / e-commerce</div>
+        <div class="lim-row">Espace membre ou connexion</div>
+        <div class="lim-row">Formulaires à logique conditionnelle</div>
+        <div class="lim-row">Sites avec de nombreuses pages distinctes</div>
+        <div class="lim-row">Interface d'administration (back-office)</div>
       </div>
     </div>
   </div>
@@ -1461,36 +1488,21 @@
   </div>
 </section>
 
-<!-- ═══ LIMITES ═══ -->
-<section class="section section-alt" id="limites">
-  <div class="container">
-    <div style="text-align:center" class="rv">
-      <span class="kicker">Honnêteté</span>
-      <h2 class="tfilet tfilet-c">Ce que je fais, ce que je ne fais pas.</h2>
-      <p class="lead" style="max-width:520px;margin:18px auto 0">Cette approche est taillée pour les sites vitrines et elle excelle dans ce domaine. Je préfère être clair dès le départ.</p>
-    </div>
-    <div class="lim-grid">
-      <div class="lim yes rv">
-        <h3>Ce que je fais</h3>
-        <div class="lim-row">Site vitrine 1 page (scroll)</div>
-        <div class="lim-row">Design unique, jamais un template</div>
-        <div class="lim-row">Formulaire de contact</div>
-        <div class="lim-row">Carte Google Maps intégrée</div>
-        <div class="lim-row">SEO technique solide</div>
-        <div class="lim-row">Animations et effets au défilement</div>
-        <div class="lim-row">Responsive mobile &amp; tablette</div>
-        <div class="lim-row">Fiche Google Business optimisée</div>
-        <div class="lim-row">Prise en main des outils IA pour votre activité</div>
-        <div class="lim-row">Modifications sur demande (50€/forfait)</div>
+<!-- ═══ ARTISAN AUGMENTÉ ═══ -->
+<section class="section dark" id="artisan-augmente">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="aa-grid">
+      <div class="rv">
+        <span class="kicker">Nouveau · Accompagnement IA</span>
+        <h2 class="tfilet">L'Artisan Augmenté.</h2>
+        <p style="margin-top:26px;color:rgba(250,249,245,.72)">Votre site, c'est la vitrine. Mais le plus gros gain de temps est dans l'arrière-boutique : les devis du soir, les mails qui s'empilent, les relances oubliées. Je gère tout ça avec l'IA dans ma propre entreprise de menuiserie, et je vous montre comment faire pareil dans la vôtre.</p>
+        <p style="color:rgba(250,249,245,.72)">Ateliers pratiques par un artisan, pour des artisans : démonstration sur mon système réel, et vous repartez avec un assistant configuré sur votre téléphone, qui connaît votre entreprise.</p>
+        <a href="artisan-augmente/" class="btn btn-coral" style="margin-top:1.6rem">Découvrir le programme →</a>
       </div>
-      <div class="lim no rv d1">
-        <h3>Ce que je ne fais pas</h3>
-        <div class="lim-row">Blog géré en autonomie par le client</div>
-        <div class="lim-row">Boutique en ligne / e-commerce</div>
-        <div class="lim-row">Espace membre ou connexion</div>
-        <div class="lim-row">Formulaires à logique conditionnelle</div>
-        <div class="lim-row">Sites avec de nombreuses pages distinctes</div>
-        <div class="lim-row">Interface d'administration (back-office)</div>
+      <div class="rv d1" style="display:flex;flex-direction:column;gap:1rem">
+        <div class="aa-chip"><div class="pr">280€ <small>/ participant</small></div><div class="ds">Atelier découverte collectif - demi-journée, 6 à 10 artisans</div></div>
+        <div class="aa-chip"><div class="pr">480€ <small>/ demi-journée</small></div><div class="ds">Démarrage IA en tête-à-tête, en visio, directement sur votre ordinateur et vos cas concrets</div></div>
+        <div class="aa-chip"><div class="pr">1 900€ <small>/ 2 jours</small></div><div class="ds">Sprint système complet : mon système, installé dans votre entreprise (petites structures, jusqu'à 5 personnes)</div></div>
       </div>
     </div>
   </div>
@@ -1859,9 +1871,10 @@
     var svg=box.querySelector('svg'),q=function(s){return svg.querySelector(s);},pc=PEN.cloneNode(true);
     svg.appendChild(pc);box.classList.add('fxp');
     var d=Drawing(q('.scene'),{sp:o.sp||1.15}),live=o.init(q,svg);
-    if(reduce){d.draw(1e4);placePen(pc,o.park,.85);return;}
-    var L=d.T+.3,clock=0,prev=null,vis=false,go=false,raf=0,full=false;
-    d.draw(0);pc.style.opacity=0;
+    if(reduce){d.draw(1e4);placePen(pc,o.park,.85);box.classList.add('on');return;}
+    // o.instant : la pièce arrive déjà dessinée (simple fondu), seule la petite boucle vit
+    var L=o.instant?0:d.T+.3,clock=0,prev=null,vis=false,go=false,raf=0,full=false;
+    if(o.instant){d.draw(1e4);full=true;placePen(pc,o.park,.85);}else{d.draw(0);pc.style.opacity=0;}
     function frame(now){
       raf=0;if(prev!==null)clock+=Math.min(.05,(now-prev)/1000);prev=now;
       if(clock<L){d.draw(clock);placePen(pc,d.pen(Math.min(clock,d.T),[620,-60,AD,0],o.park),.85);}
@@ -1869,7 +1882,7 @@
       if(vis)raf=requestAnimationFrame(frame);
     }
     // démarre quand la pièce est bien visible, puis ne tourne que tant qu'elle l'est
-    new IntersectionObserver(function(es){var e=es[es.length-1];vis=e.isIntersecting;if(e.intersectionRatio>=.3)go=true;
+    new IntersectionObserver(function(es){var e=es[es.length-1];vis=e.isIntersecting;if(e.intersectionRatio>=.3){go=true;box.classList.add('on');}
       if(vis&&go&&!raf){prev=null;raf=requestAnimationFrame(frame);}},{threshold:[0,.3]}).observe(box);
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){d.measure();});
   }
@@ -2016,7 +2029,7 @@
   /* Survols : chaque famille de cartes a son geste */
   gesture('.eng-n','circ');gesture('.step h3','und');gesture('.opt','tick');
   $$('.eng,.step,.opt').forEach(function(c){c.classList.add('fx-hov');});
-  $$('.prix').forEach(function(c){c.classList.add('fx-frame');}); // tarifs : barre cuivre + contour qui se ferme
+  $$('.prix,.car-card').forEach(function(c){c.classList.add('fx-frame');}); // tarifs et réalisations : contour qui se ferme au survol
 
   // Index de cascade (tarifs, formulaire, limites)
   $$('.prix').forEach(function(p){$$('li',p).forEach(function(li,i){li.style.setProperty('--k',i);});});
@@ -2094,7 +2107,7 @@
   footBall(document.querySelector('.footer'),'.flogo,.footer ul a,.footer .cl',document.querySelector('.footer-bottom'));
 
   /* ---------- Pièces dessinées : la méthode, l'atelier ---------- */
-  piece('.piece-methode',{period:7,park:[262,458,-8,1],init:function(q){
+  piece('.piece-methode',{instant:true,period:7,park:[262,458,-8,1],init:function(q){
     var hand=q('.hand'),sweep=q('.sweep'),sh=q('.shackle'),top=q('.sheet.top');
     return function(u){
       // le chrono repart de zéro et l'aiguille file sous la seconde
@@ -2108,7 +2121,7 @@
       var b=u>5.2&&u<6.4?Math.sin(Math.PI*(u-5.2)/1.2):0;
       top.setAttribute('transform','translate('+(3*b).toFixed(1)+' '+(-7*b).toFixed(1)+') rotate('+(1.5*b).toFixed(2)+' 216 212)');
     };}});
-  piece('.piece-atelier',{period:8,park:[214,326,-3,1],init:function(q,svg){
+  piece('.piece-atelier',{instant:true,period:8,park:[214,326,-3,1],init:function(q,svg){
     var lamp=q('.lamp'),plane=q('.plane'),shav=q('.shav'),site=q('.site'),stars=$$('.stars path',svg),steam=$$('.steam path',svg);
     var siteD=Drawing(site,{sp:1.15}),st0=Math.min.apply(null,siteD.S.map(function(s){return s.t;}));
     shav.setAttribute('pathLength','1');shav.style.strokeDasharray='1 2';

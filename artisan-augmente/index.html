@@ -326,6 +326,15 @@
     .nav-links a[href="../"]::after{content:"→";position:static;display:inline-block;height:auto;background:none;margin-left:8px;color:var(--coral);transition:transform .3s var(--ease)}
     .nav-links a[href="../"]:hover{border-color:var(--coral);background:var(--paper);color:var(--coral-deep)}
     .nav-links a[href="../"]:hover::after{transform:translateX(4px)}
+    /* Sur téléphone : le retour vers les sites web reste visible, sur une ligne fine sous le logo */
+    @media(max-width:760px){
+      .nav-in{height:auto;flex-wrap:wrap;padding-top:11px;padding-bottom:0}
+      .nav-links{display:contents}
+      .nav-links li:nth-child(4){order:3;flex-basis:100%;margin-top:10px;border-top:1px solid var(--line);text-align:center}
+      .nav-links a[href="../"]{display:inline-block;margin:0;padding:8px 14px;border:0;border-radius:0;font-size:.84rem}
+      .nav-links a[href="../"]::before{display:none}
+      .nav-links a[href="../"]:hover{background:none}
+    }
 
   /* =============================================================
      EFFETS, NOYAU COMMUN (accueil et Artisan augmenté)
@@ -425,6 +434,9 @@
     .fx *,.fx *::before,.fx *::after{transition-duration:0s !important;transition-delay:0s !important}
     .fx .w>span{transform:none}
   }
+  /* pièces qui arrivent déjà dessinées : un simple fondu */
+  .fx-piece.fxp{opacity:0;transition:opacity .8s var(--ease)}
+  .fx-piece.fxp.on{opacity:1}
 
 
     /* ===== Artisan augmenté : effets propres à la page (le noyau commun est dans fx-core.css) ===== */
@@ -660,7 +672,7 @@
 <section id="constat">
   <div class="wrap">
     <div class="kicker r">Le constat</div>
-    <h2 class="h2 r d1">Le métier, vous savez faire. C'est le reste qui vous mange.</h2>
+    <h2 class="h2 r d1">Le métier, vous savez faire. C'est le reste qui prend vos soirées.</h2>
     <div class="grid3">
       <div class="card r d1">
         <h3>Les devis du soir</h3>
@@ -748,7 +760,7 @@
     <h2 class="h2 r d1">Quatre façons de s'y mettre</h2>
     <p class="lead r d2">Tout est en one-shot : un début, une fin, pas d'abonnement, pas d'engagement. Vous restez maître de vos outils, comme de votre site.</p>
     <div class="offres-grid">
-      <div class="offre star r d1">
+      <div class="offre r d1">
         <h3>Atelier découverte</h3>
         <div class="prix">280&nbsp;€ <small>/ participant</small></div>
         <ul>
@@ -759,7 +771,7 @@
           <li>30 min de suivi offertes</li>
         </ul>
       </div>
-      <div class="offre r d2">
+      <div class="offre star r d2">
         <h3>Démarrage IA solo</h3>
         <div class="prix">480&nbsp;€ <small>/ demi-journée</small></div>
         <ul>
@@ -1065,9 +1077,10 @@
     var svg=box.querySelector('svg'),q=function(s){return svg.querySelector(s);},pc=PEN.cloneNode(true);
     svg.appendChild(pc);box.classList.add('fxp');
     var d=Drawing(q('.scene'),{sp:o.sp||1.15}),live=o.init(q,svg);
-    if(reduce){d.draw(1e4);placePen(pc,o.park,.85);return;}
-    var L=d.T+.3,clock=0,prev=null,vis=false,go=false,raf=0,full=false;
-    d.draw(0);pc.style.opacity=0;
+    if(reduce){d.draw(1e4);placePen(pc,o.park,.85);box.classList.add('on');return;}
+    // o.instant : la pièce arrive déjà dessinée (simple fondu), seule la petite boucle vit
+    var L=o.instant?0:d.T+.3,clock=0,prev=null,vis=false,go=false,raf=0,full=false;
+    if(o.instant){d.draw(1e4);full=true;placePen(pc,o.park,.85);}else{d.draw(0);pc.style.opacity=0;}
     function frame(now){
       raf=0;if(prev!==null)clock+=Math.min(.05,(now-prev)/1000);prev=now;
       if(clock<L){d.draw(clock);placePen(pc,d.pen(Math.min(clock,d.T),[620,-60,AD,0],o.park),.85);}
@@ -1075,7 +1088,7 @@
       if(vis)raf=requestAnimationFrame(frame);
     }
     // démarre quand la pièce est bien visible, puis ne tourne que tant qu'elle l'est
-    new IntersectionObserver(function(es){var e=es[es.length-1];vis=e.isIntersecting;if(e.intersectionRatio>=.3)go=true;
+    new IntersectionObserver(function(es){var e=es[es.length-1];vis=e.isIntersecting;if(e.intersectionRatio>=.3){go=true;box.classList.add('on');}
       if(vis&&go&&!raf){prev=null;raf=requestAnimationFrame(frame);}},{threshold:[0,.3]}).observe(box);
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){d.measure();});
   }
