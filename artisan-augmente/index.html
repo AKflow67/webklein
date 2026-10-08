@@ -34,10 +34,10 @@
       "@type": "OfferCatalog",
       "name": "Offres d'accompagnement IA",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier découverte collectif (demi-journée, par participant)" }, "price": "280", "priceCurrency": "EUR" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Démarrage IA artisan (demi-journée individuelle)" }, "price": "480", "priceCurrency": "EUR" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier intra organisme (demi-journée, jusqu'à 10 participants)" }, "price": "1500", "priceCurrency": "EUR" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint système complet (2 jours en entreprise)" }, "price": "1900", "priceCurrency": "EUR" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier découverte collectif (demi-journée, par participant)" }, "price": "280", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "280", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Démarrage IA artisan (demi-journée individuelle)" }, "price": "480", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "480", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier intra organisme (demi-journée, jusqu'à 10 participants)" }, "price": "1500", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "1500", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint système complet (2 jours en entreprise)" }, "price": "1900", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "1900", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } }
       ]
     }
   }
@@ -531,6 +531,19 @@
     }
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="decbf6cc-667f-4334-8723-b027420ce22e"></script>
+<style>
+/* Bascule TTC / HT des prix (2026-10-08) */
+.taxsw{display:flex;align-items:center;justify-content:flex-start;gap:6px;margin:1.6rem 0 0;font-size:.82rem;flex-wrap:wrap}
+.taxsw-l,.taxsw-n{color:var(--ink-mute,#8a7468)}
+.taxsw-l{margin-right:4px}.taxsw-n{margin-left:6px;font-size:.76rem}
+.taxsw-b{display:inline-flex;padding:3px;border:1px solid var(--line,rgba(0,0,0,.12));border-radius:999px;background:rgba(255,255,255,.55)}
+.taxsw button{font:inherit;font-weight:600;letter-spacing:.04em;padding:5px 14px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft,#55483f);cursor:pointer;transition:background .25s,color .25s}
+.taxsw button[aria-pressed="true"]{background:var(--coral,#b3552f);color:#fff}
+.taxsw button:focus-visible{outline:2px solid var(--coral,#b3552f);outline-offset:2px}
+.px{font-variant-numeric:tabular-nums lining-nums}
+.offre .prix small{display:block;margin-top:.5rem}
+small.tx{font-size:.32em;font-weight:500;letter-spacing:.06em;vertical-align:.9em;margin-left:.15em;opacity:.7}
+</style>
 </head>
 <body>
 
@@ -759,10 +772,11 @@
     <div class="kicker r">Les offres</div>
     <h2 class="h2 r d1">Quatre façons de s'y mettre</h2>
     <p class="lead r d2">Tout est en one-shot : un début, une fin, pas d'abonnement, pas d'engagement. Vous restez maître de vos outils, comme de votre site. Tout est pensé pour une personne aux commandes : celle qui fait les devis, répond aux clients et tient le planning, seule ou avec une équipe sur les chantiers.</p>
+    <div class="taxsw" role="group" aria-label="Affichage des prix" data-tax-default="ht"><span class="taxsw-l">Prix affichés</span><span class="taxsw-b"><button type="button" data-tax="ttc" aria-pressed="false">TTC</button><button type="button" data-tax="ht" aria-pressed="true">HT</button></span><span class="taxsw-n">TVA 20 %</span></div>
     <div class="offres-grid">
       <div class="offre r d1">
         <h3>Atelier découverte</h3>
-        <div class="prix">280&nbsp;€ <small>/ participant</small></div>
+        <div class="prix"><span class="px" data-ht="280">280</span>&nbsp;€ <small><span class="tx">HT</span> / participant</small></div>
         <ul>
           <li>Demi-journée, 6 à 10 artisans qui gèrent seuls leur entreprise</li>
           <li>Démonstrations sur système réel</li>
@@ -773,7 +787,7 @@
       </div>
       <div class="offre star r d2">
         <h3>Démarrage IA solo</h3>
-        <div class="prix">480&nbsp;€ <small>/ demi-journée</small></div>
+        <div class="prix"><span class="px" data-ht="480">480</span>&nbsp;€ <small><span class="tx">HT</span> / demi-journée</small></div>
         <ul>
           <li>En visio, en tête-à-tête, directement sur votre ordinateur</li>
           <li>Installation et prise en main</li>
@@ -784,7 +798,7 @@
       </div>
       <div class="offre r d3">
         <h3>Atelier intra</h3>
-        <div class="prix">1&nbsp;500&nbsp;€ <small>forfait</small></div>
+        <div class="prix"><span class="px" data-ht="1500">1 500</span>&nbsp;€ <small><span class="tx">HT</span> forfait</small></div>
         <ul>
           <li>Pour bureaux comptables, organisations professionnelles</li>
           <li>Jusqu'à 10 de vos clients ou adhérents : des artisans qui gèrent seuls leur entreprise</li>
@@ -794,7 +808,7 @@
       </div>
       <div class="offre r d4">
         <h3>Sprint système complet</h3>
-        <div class="prix">1&nbsp;900&nbsp;€ <small>/ 2 jours</small></div>
+        <div class="prix"><span class="px" data-ht="1900">1 900</span>&nbsp;€ <small><span class="tx">HT</span> / 2 jours</small></div>
         <ul>
           <li>Dans votre entreprise</li>
           <li>Pour l'artisan qui gère seul, avec ou sans équipe sur chantier</li>
@@ -805,7 +819,7 @@
         </ul>
       </div>
     </div>
-    <p class="offres-note r">Tarifs HT, TVA 20 % en sus. Deux appels de suivi offerts après chaque forfait de mise en place, puis accompagnement à distance à 70 € / heure. Et si votre présence en ligne est aussi à construire, <a href="../">WebKlein crée votre site à partir de 540 €</a> : les deux se complètent bien.</p>
+    <p class="offres-note r"><span class="txnote" data-ht="Tarifs HT, TVA 20 % en sus." data-ttc="Tarifs TTC, TVA 20 % incluse.">Tarifs HT, TVA 20 % en sus.</span> Deux appels de suivi offerts après chaque forfait de mise en place, puis accompagnement à distance à <span class="px" data-ht="70">70</span> € <span class="tx">HT</span> / heure. Et si votre présence en ligne est aussi à construire, <a href="../">WebKlein crée votre site à partir de <span class="px" data-ht="540">540</span> € <span class="tx">HT</span></a> : les deux se complètent bien.</p>
   </div>
 </section>
 
@@ -1301,6 +1315,28 @@
       scenes:[{c:'.s1',live:live1,ld:7.4,out:'erase'},{c:'.s2',live:live2,ld:7,out:'rewind'}],
       enter:function(){live1(7.3,[470,590],-8);live2(6.99);cks.forEach(function(c){c.style.strokeDashoffset=1.05;});}});
   })();
+})();
+</script>
+<script>
+/* Bascule TTC / HT : les montants de base sont HT (data-ht), TVA 20 %. */
+(function(){
+  var sw=document.querySelector('.taxsw');if(!sw)return;
+  var mode=sw.getAttribute('data-tax-default')||'ttc';
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(n){n=Math.round(n);var s=String(n);return s.length<4?s:s.slice(0,-3)+'\u00a0'+s.slice(-3);}
+  function val(el,m){var h=+el.getAttribute('data-ht');return m==='ttc'?h*1.2:h;}
+  function tween(el,from,to){
+    if(reduce||from===to){el.textContent=fmt(to);return;}
+    var t0=null;(function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/450),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)requestAnimationFrame(step);})(performance.now());
+  }
+  function render(m,anim){
+    var old=mode;mode=m;
+    document.querySelectorAll('.px').forEach(function(el){var to=val(el,m);if(anim)tween(el,val(el,old),to);else el.textContent=fmt(to);});
+    document.querySelectorAll('.tx').forEach(function(el){el.textContent=m==='ttc'?'TTC':'HT';});
+    document.querySelectorAll('.txnote').forEach(function(el){el.textContent=el.getAttribute('data-'+m);});
+    sw.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tax')===m?'true':'false');});
+  }
+  sw.addEventListener('click',function(e){var b=e.target.closest('button[data-tax]');if(b&&b.getAttribute('data-tax')!==mode)render(b.getAttribute('data-tax'),true);});
 })();
 </script>
 </body>

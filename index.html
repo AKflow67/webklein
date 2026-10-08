@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebKlein - Sites web artisanaux · Hautes-Pyrénées</title>
-  <meta name="description" content="Sites vitrines faits à la main par un artisan. Beaux, rapides, bien référencés. Sans abonnement, sans dépendance. À partir de 540€.">
+  <meta name="description" content="Sites vitrines faits à la main par un artisan. Beaux, rapides, bien référencés. Sans abonnement, sans dépendance. À partir de 540 € HT (648 € TTC).">
   <meta name="google-site-verification" content="4euGPyNV7EtIzaqDAxJDOh5nzS77zbbWz3Murubqm4g" />
   <link rel="canonical" href="https://www.webklein.fr/">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="WebKlein - Sites web artisanaux · Hautes-Pyrénées">
-  <meta property="og:description" content="Sites vitrines faits à la main par un artisan menuisier. Beaux, rapides, bien référencés. À partir de 540€ tout inclus, sans abonnement.">
+  <meta property="og:description" content="Sites vitrines faits à la main par un artisan menuisier. Beaux, rapides, bien référencés. À partir de 540 € HT (648 € TTC) tout inclus, sans abonnement.">
   <meta property="og:url" content="https://www.webklein.fr/">
   <meta property="og:image" content="https://www.webklein.fr/logo-webklein.png">
   <meta property="og:locale" content="fr_FR">
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "WebKlein - L'Artisan du Web",
-    "description": "Création de sites vitrines artisanaux pour indépendants et artisans. À partir de 540€ tout inclus, sans abonnement. Pack visibilité locale, fiche Google Business, accompagnement IA.",
+    "description": "Création de sites vitrines artisanaux pour indépendants et artisans. À partir de 540 € HT (648 € TTC) tout inclus, sans abonnement. Pack visibilité locale, fiche Google Business, accompagnement IA.",
     "url": "https://www.webklein.fr",
     "email": "contact@webklein.fr",
     "telephone": "+33603574547",
@@ -35,14 +35,14 @@
       "addressRegion": "Hautes-Pyrénées",
       "addressCountry": "FR"
     },
-    "priceRange": "290€ - 590€",
+    "priceRange": "290 € - 1 900 € HT",
     "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création de site vitrine" }, "price": "540", "priceCurrency": "EUR" },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier découverte IA collectif (demi-journée, par participant)" }, "price": "280", "priceCurrency": "EUR" },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint IA système complet (2 jours en entreprise)" }, "price": "1900", "priceCurrency": "EUR" },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pack Visibilité locale (site + fiche Google Business + annuaires)" }, "price": "590", "priceCurrency": "EUR" },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimisation fiche Google Business" }, "price": "290", "priceCurrency": "EUR" },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Démarrage IA artisan (demi-journée d'accompagnement)" }, "price": "480", "priceCurrency": "EUR" }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création de site vitrine" }, "price": "540", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "540", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Atelier découverte IA collectif (demi-journée, par participant)" }, "price": "280", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "280", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sprint IA système complet (2 jours en entreprise)" }, "price": "1900", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "1900", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pack Visibilité locale (site + fiche Google Business + annuaires)" }, "price": "590", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "590", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimisation fiche Google Business" }, "price": "290", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "290", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Démarrage IA artisan (demi-journée d'accompagnement)" }, "price": "480", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "480", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } }
     ],
     "areaServed": {
       "@type": "GeoCircle",
@@ -864,6 +864,18 @@
   .car-card.fx-frame::after{z-index:4}
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="decbf6cc-667f-4334-8723-b027420ce22e"></script>
+<style>
+/* Bascule TTC / HT des prix (2026-10-08) */
+.taxsw{display:flex;align-items:center;justify-content:center;gap:6px;margin:0 auto 26px;font-size:.82rem}
+.taxsw-l,.taxsw-n{color:var(--ink-mute,#8a7468)}
+.taxsw-l{margin-right:4px}.taxsw-n{margin-left:6px;font-size:.76rem}
+.taxsw-b{display:inline-flex;padding:3px;border:1px solid var(--line,rgba(0,0,0,.12));border-radius:999px;background:rgba(255,255,255,.55)}
+.taxsw button{font:inherit;font-weight:600;letter-spacing:.04em;padding:5px 14px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft,#55483f);cursor:pointer;transition:background .25s,color .25s}
+.taxsw button[aria-pressed="true"]{background:var(--coral,#b3552f);color:#fff}
+.taxsw button:focus-visible{outline:2px solid var(--coral,#b3552f);outline-offset:2px}
+.px{font-variant-numeric:tabular-nums lining-nums}
+small.tx{font-size:.32em;font-weight:500;letter-spacing:.06em;vertical-align:.9em;margin-left:.15em;opacity:.7}
+</style>
 </head>
 <body>
 
@@ -905,9 +917,9 @@
       <span class="kicker">Artisan menuisier · Hautes-Pyrénées</span>
       <h1>Un site web<br><span class="brand">fait à la main.</span></h1>
       <p class="lead">Beau, rapide, bien référencé. <strong>Sans abonnement, sans dépendance. Votre site vous appartient à 100%.</strong></p>
-      <div class="hero-price"><b>540€</b><span>tout inclus</span></div>
+      <div class="hero-price"><b><span class="px" data-ht="540">648</span>€</b><span><span class="tx">TTC</span>, tout inclus</span></div>
       <div class="hero-stats">
-        <div class="st"><div class="stv">540€</div><div class="stl">tout inclus</div></div>
+        <div class="st"><div class="stv"><span class="px" data-ht="540">648</span>€</div><div class="stl"><span class="tx">TTC</span>, tout inclus</div></div>
         <div class="st alt"><div class="stv">0€</div><div class="stl">d'abonnement</div></div>
         <div class="st"><div class="stv">Sous 48h</div><div class="stl">réponse</div></div>
       </div>
@@ -1092,7 +1104,7 @@
         <div class="pullquote" style="margin-top:26px">J'ai passé des mois à apprendre à construire le meilleur site possible, avec la même passion et la même rigueur que dans mon métier d'ébéniste.</div>
         <p>Je suis menuisier-ébéniste. Et comme tout artisan curieux, quand je m'intéresse à quelque chose, je vais jusqu'au fond. Référencement, typographie, performance web, animations : j'ai tout appris en autodidacte, avec passion.</p>
         <p>Ce que j'en ai retiré est simple : pour les indépendants qui ont besoin d'un site vitrine, il existe une façon de faire des sites beaux et efficaces, bien plus simple et accessible que ce que proposent les agences. Ce site en est la démonstration.</p>
-        <p>Dans les territoires ruraux, ils sont nombreux - infirmiers, artisans, thérapeutes, indépendants - à ne pas exister en ligne. Pas parce qu'ils ne veulent pas. Parce que les offres sont trop chères, trop complexes, trop opaques. <strong>540€ pour changer ça.</strong></p>
+        <p>Dans les territoires ruraux, ils sont nombreux - infirmiers, artisans, thérapeutes, indépendants - à ne pas exister en ligne. Pas parce qu'ils ne veulent pas. Parce que les offres sont trop chères, trop complexes, trop opaques. <strong><span class="px" data-ht="540">648</span>€ <span class="tx">TTC</span> pour changer ça.</strong></p>
       </div>
       <div class="rv d1 has-moi">
         <div class="photo-stack">
@@ -1256,7 +1268,7 @@
         <h2 class="tfilet">Un bon pro mérite d'être trouvé.</h2>
         <p style="margin-top:26px">Je suis menuisier. Je connais la réalité des indépendants et des artisans : on a les mains dans le métier, pas le temps de se battre avec un site internet. Beaucoup n'en ont pas, ou en ont un qui ne leur ressemble pas - pas par manque d'envie, juste par manque de temps ou de budget.</p>
         <p>Alors le soir, après l'atelier, je crée des sites pour des gens comme nous. Des sites simples, beaux, qui donnent une vraie image professionnelle - <strong>sans abonnement, sans dépendance, sans usine à gaz</strong>.</p>
-        <p>540€, un site qui vous ressemble, et vous êtes en ligne. C'est aussi simple que ça.</p>
+        <p><span class="px" data-ht="540">648</span>€ <span class="tx">TTC</span>, un site qui vous ressemble, et vous êtes en ligne. C'est aussi simple que ça.</p>
       </div>
     </div>
   </div>
@@ -1283,7 +1295,7 @@
       <div class="eng rv d2">
         <div class="eng-n">3</div>
         <h3>Prix qui change tout</h3>
-        <p>540€ pour un site qui donne une image professionnelle, rapide, bien référencé. <span class="accent">Pas d'abonnement mensuel. Pas de surprise. Le prix le plus juste du marché.</span></p>
+        <p><span class="px" data-ht="540">648</span>€ <span class="tx">TTC</span> pour un site qui donne une image professionnelle, rapide, bien référencé. <span class="accent">Pas d'abonnement mensuel. Pas de surprise. Le prix le plus juste du marché.</span></p>
       </div>
     </div>
   </div>
@@ -1407,7 +1419,7 @@
         <div class="lim-row">Responsive mobile &amp; tablette</div>
         <div class="lim-row">Fiche Google Business optimisée</div>
         <div class="lim-row">Prise en main des outils IA pour votre activité</div>
-        <div class="lim-row">Modifications sur demande (50€/forfait)</div>
+        <div class="lim-row">Modifications sur demande (<span class="px" data-ht="50">60</span>€ <span class="tx">TTC</span>/forfait)</div>
       </div>
       <div class="lim no rv d1">
         <h3>Ce que je ne fais pas</h3>
@@ -1430,10 +1442,11 @@
       <h2 class="tfilet tfilet-c">Transparent, sans surprise.</h2>
       <p class="lead" style="max-width:480px;margin:18px auto 0">Un devis gratuit avant tout engagement. Aucune prestation ne démarre sans votre accord.</p>
     </div>
+    <div class="taxsw" role="group" aria-label="Affichage des prix" data-tax-default="ttc"><span class="taxsw-l">Prix affichés</span><span class="taxsw-b"><button type="button" data-tax="ttc" aria-pressed="true">TTC</button><button type="button" data-tax="ht" aria-pressed="false">HT</button></span><span class="taxsw-n">TVA 20 %</span></div>
     <div class="tgrid">
       <div class="prix rv">
         <span class="nm">Site vitrine</span>
-        <div class="amt">540€</div>
+        <div class="amt"><span class="px" data-ht="540">648</span>€<small class="tx">TTC</small></div>
         <span class="sub">paiement unique · tout inclus</span>
         <ul>
           <li>Design unique sur mesure (jamais un template)</li>
@@ -1447,7 +1460,7 @@
       </div>
       <div class="prix star rv d1">
         <span class="nm">Pack Visibilité locale</span>
-        <div class="amt">590€</div>
+        <div class="amt"><span class="px" data-ht="590">708</span>€<small class="tx">TTC</small></div>
         <span class="sub">le site + être trouvé sur Google</span>
         <ul>
           <li>Tout le Site vitrine inclus</li>
@@ -1460,7 +1473,7 @@
       </div>
       <div class="prix rv">
         <span class="nm">Fiche Google Business</span>
-        <div class="amt">290€</div>
+        <div class="amt"><span class="px" data-ht="290">348</span>€<small class="tx">TTC</small></div>
         <span class="sub">pour ceux qui ont déjà un site</span>
         <ul>
           <li>Création ou reprise de votre fiche Google</li>
@@ -1472,7 +1485,7 @@
       </div>
       <div class="prix rv d1">
         <span class="nm">Démarrage IA artisan</span>
-        <div class="amt">480€</div>
+        <div class="amt"><span class="px" data-ht="480">576</span>€<small class="tx">TTC</small></div>
         <span class="sub">une demi-journée · en visio, sur votre ordinateur</span>
         <ul>
           <li>Installation d'outils IA adaptés à votre métier</li>
@@ -1484,8 +1497,8 @@
         </ul>
       </div>
     </div>
-    <p class="tnote rv">Le forfait modification <strong>50€</strong> intervient <strong>après la phase de création</strong>, une fois votre site en ligne. Le principe est simple : vous regroupez tout ce que vous voulez changer (une photo, un texte, un tarif, une section) et je m'en occupe en une seule intervention. <strong>Un forfait = un lot de modifications</strong>, quel que soit le nombre de petits ajustements. Si votre demande dépasse le cadre d'une mise à jour (refonte complète, ajout de fonctionnalités), je vous fais un devis sur mesure avant de commencer.</p>
-    <p class="tnote rv d1"><strong>Option Tranquillité, 90€/an, totalement facultative.</strong> Votre site fonctionne très bien sans : rien à mettre à jour, rien qui casse. Mais si vous préférez ne penser à rien : une vérification complète par an, un lot de modifications inclus, et un mini-rapport de fréquentation. Vous arrêtez quand vous voulez, votre site reste à vous.</p>
+    <p class="tnote rv">Le forfait modification <strong><span class="px" data-ht="50">60</span>€ <span class="tx">TTC</span></strong> intervient <strong>après la phase de création</strong>, une fois votre site en ligne. Le principe est simple : vous regroupez tout ce que vous voulez changer (une photo, un texte, un tarif, une section) et je m'en occupe en une seule intervention. <strong>Un forfait = un lot de modifications</strong>, quel que soit le nombre de petits ajustements. Si votre demande dépasse le cadre d'une mise à jour (refonte complète, ajout de fonctionnalités), je vous fais un devis sur mesure avant de commencer.</p>
+    <p class="tnote rv d1"><strong>Option Tranquillité, <span class="px" data-ht="90">108</span>€ <span class="tx">TTC</span>/an, totalement facultative.</strong> Votre site fonctionne très bien sans : rien à mettre à jour, rien qui casse. Mais si vous préférez ne penser à rien : une vérification complète par an, un lot de modifications inclus, et un mini-rapport de fréquentation. Vous arrêtez quand vous voulez, votre site reste à vous.</p>
   </div>
 </section>
 
@@ -1501,9 +1514,9 @@
         <a href="artisan-augmente/" class="btn btn-coral" style="margin-top:1.6rem" data-umami-event="clic-accompagnement-ia">Découvrir le programme →</a>
       </div>
       <div class="rv d1" style="display:flex;flex-direction:column;gap:1rem">
-        <div class="aa-chip"><div class="pr">280€ <small>/ participant</small></div><div class="ds">Atelier découverte collectif - demi-journée, 6 à 10 artisans</div></div>
-        <div class="aa-chip"><div class="pr">480€ <small>/ demi-journée</small></div><div class="ds">Démarrage IA en tête-à-tête, en visio, directement sur votre ordinateur et vos cas concrets</div></div>
-        <div class="aa-chip"><div class="pr">1 900€ <small>/ 2 jours</small></div><div class="ds">Sprint système complet : mon système, installé dans votre entreprise (pour l'artisan qui gère seul, avec ou sans équipe sur chantier)</div></div>
+        <div class="aa-chip"><div class="pr"><span class="px" data-ht="280">336</span>€ <small><span class="tx">TTC</span> / participant</small></div><div class="ds">Atelier découverte collectif - demi-journée, 6 à 10 artisans</div></div>
+        <div class="aa-chip"><div class="pr"><span class="px" data-ht="480">576</span>€ <small><span class="tx">TTC</span> / demi-journée</small></div><div class="ds">Démarrage IA en tête-à-tête, en visio, directement sur votre ordinateur et vos cas concrets</div></div>
+        <div class="aa-chip"><div class="pr"><span class="px" data-ht="1900">2 280</span>€ <small><span class="tx">TTC</span> / 2 jours</small></div><div class="ds">Sprint système complet : mon système, installé dans votre entreprise (pour l'artisan qui gère seul, avec ou sans équipe sur chantier)</div></div>
       </div>
     </div>
   </div>
@@ -2177,6 +2190,28 @@
       scenes:[{c:'.sc-a',live:liveA,ld:6.6,out:'erase'},{c:'.sc-c',live:liveC,ld:7.4,out:'rewind'}],
       enter:function(){liveA(0,[396,590],-8);thumb.style.opacity=0;liveC(7.3,[396,590],-8);}});
   })();
+})();
+</script>
+<script>
+/* Bascule TTC / HT : les montants de base sont HT (data-ht), TVA 20 %. */
+(function(){
+  var sw=document.querySelector('.taxsw');if(!sw)return;
+  var mode=sw.getAttribute('data-tax-default')||'ttc';
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(n){n=Math.round(n);var s=String(n);return s.length<4?s:s.slice(0,-3)+'\u00a0'+s.slice(-3);}
+  function val(el,m){var h=+el.getAttribute('data-ht');return m==='ttc'?h*1.2:h;}
+  function tween(el,from,to){
+    if(reduce||from===to){el.textContent=fmt(to);return;}
+    var t0=null;(function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/450),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)requestAnimationFrame(step);})(performance.now());
+  }
+  function render(m,anim){
+    var old=mode;mode=m;
+    document.querySelectorAll('.px').forEach(function(el){var to=val(el,m);if(anim)tween(el,val(el,old),to);else el.textContent=fmt(to);});
+    document.querySelectorAll('.tx').forEach(function(el){el.textContent=m==='ttc'?'TTC':'HT';});
+    document.querySelectorAll('.txnote').forEach(function(el){el.textContent=el.getAttribute('data-'+m);});
+    sw.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tax')===m?'true':'false');});
+  }
+  sw.addEventListener('click',function(e){var b=e.target.closest('button[data-tax]');if(b&&b.getAttribute('data-tax')!==mode)render(b.getAttribute('data-tax'),true);});
 })();
 </script>
 </body>
